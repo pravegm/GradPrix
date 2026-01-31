@@ -328,14 +328,14 @@ function initAnimations() {
   });
   
   animatedElements.forEach((el, index) => {
-    // Stagger animation based on siblings
+    // Stagger animation based on siblings - fast and snappy
     const siblings = el.parentElement?.children;
     const siblingIndex = siblings ? Array.from(siblings).indexOf(el) : index;
-    const delay = Math.min(siblingIndex * 0.08, 0.4);
+    const delay = Math.min(siblingIndex * 0.04, 0.16);
     
     el.style.opacity = '0';
-    el.style.transform = 'translateY(24px)';
-    el.style.transition = `opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1) ${delay}s, transform 0.7s cubic-bezier(0.4, 0, 0.2, 1) ${delay}s`;
+    el.style.transform = 'translateY(16px)';
+    el.style.transition = `opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1) ${delay}s, transform 0.35s cubic-bezier(0.4, 0, 0.2, 1) ${delay}s`;
     observer.observe(el);
   });
 }
@@ -423,8 +423,8 @@ function initPremiumEffects() {
   premiumStyles.textContent = `
     .section-header {
       opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateY(14px);
+      transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
     .section-header.animate-in {
@@ -433,11 +433,11 @@ function initPremiumEffects() {
     }
     
     .navbar {
-      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), background 0.2s ease, box-shadow 0.2s ease;
     }
     
     .service-card, .testimonial-card, .team-card {
-      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease, border-color 0.3s ease !important;
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease, border-color 0.2s ease !important;
     }
     
     /* Button glow effect */
@@ -483,7 +483,7 @@ function initPremiumEffects() {
 /**
  * Counter animation for stats
  */
-function animateCounter(element, target, duration = 2000) {
+function animateCounter(element, target, duration = 1000) {
   const start = 0;
   const startTime = performance.now();
   

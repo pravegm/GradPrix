@@ -598,51 +598,161 @@
     }
     
     @media (max-width: 768px) {
+      .blog-post-hero {
+        padding: 100px 16px 40px;
+        min-height: auto;
+      }
+      
       .blog-post-title {
-        font-size: 2rem;
+        font-size: 1.5rem;
+        line-height: 1.3;
+      }
+      
+      .blog-post-meta {
+        font-size: 12px;
+        flex-wrap: wrap;
+        gap: 8px;
       }
       
       .blog-post-hero-image {
-        height: 300px;
+        height: 200px;
+        margin-top: 24px;
       }
       
       .hero-timeline-point {
-        width: 50px;
-        height: 50px;
-        margin: 0 10px;
+        width: 40px;
+        height: 40px;
+        margin: 0 6px;
       }
       
       .hero-timeline-year {
-        font-size: 1rem;
+        font-size: 0.875rem;
       }
       
       .hero-timeline-label {
         display: none;
       }
       
+      .hero-timeline-line {
+        width: 30px;
+      }
+      
+      .blog-post-content {
+        padding: 32px 16px;
+      }
+      
       .blog-post-content h2 {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
+        margin-top: 32px;
+      }
+      
+      .blog-post-content h3 {
+        font-size: 1.1rem;
+      }
+      
+      .blog-post-content p,
+      .blog-post-content li {
+        font-size: 15px;
+        line-height: 1.7;
       }
       
       .stat-highlight {
         flex-direction: column;
         text-align: center;
+        padding: 20px 16px;
+      }
+      
+      .myth-box,
+      .reality-box {
+        padding: 16px;
       }
       
       .experience-comparison {
         grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      
+      .candidate-card {
+        padding: 20px 16px;
+      }
+      
+      .candidate-card h4 {
+        font-size: 1rem;
+      }
+      
+      .narrative-step {
+        padding: 20px 16px;
+      }
+      
+      .narrative-step h4 {
+        font-size: 1rem;
+      }
+      
+      .age-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      
+      .age-stat-item {
+        padding: 16px 12px;
+      }
+      
+      .age-stat-number {
+        font-size: 1.5rem;
+      }
+      
+      blockquote {
+        padding: 16px 20px;
+        font-size: 1rem;
+        margin: 24px 0;
+      }
+      
+      .gradprix-cta {
+        padding: 32px 20px;
+        margin: 32px 0;
+      }
+      
+      .gradprix-cta h3 {
+        font-size: 1.25rem;
+      }
+      
+      .gradprix-cta p {
+        font-size: 14px;
+      }
+      
+      .gradprix-cta .btn {
+        width: 100%;
+        padding: 14px 24px;
+      }
+      
+      .related-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .blog-post-title {
+        font-size: 1.35rem;
+      }
+      
+      .hero-timeline-point {
+        width: 35px;
+        height: 35px;
+        margin: 0 4px;
+      }
+      
+      .hero-timeline-year {
+        font-size: 0.75rem;
       }
       
       .age-stats {
         grid-template-columns: 1fr;
       }
       
-      .gradprix-cta {
-        padding: var(--spacing-xl);
-      }
-      
-      .gradprix-cta h3 {
-        font-size: 1.5rem;
+      .blog-post-content p,
+      .blog-post-content li {
+        font-size: 14px;
       }
     }
   </style>

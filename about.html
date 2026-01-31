@@ -18,7 +18,7 @@
   <!-- Styles -->
   <link rel="stylesheet" href="assets/css/styles.css">
   
-  <!-- Favicon -->
+<!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
 </head>
 <body>
@@ -98,32 +98,43 @@
           <h2>Born From the Trenches of MBA Admissions</h2>
         </div>
         
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl);">
+        <div class="story-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl);">
           <style>
             @media (max-width: 768px) {
               .story-columns { grid-template-columns: 1fr !important; }
+              .story-grid { grid-template-columns: 1fr !important; gap: var(--spacing-lg) !important; }
+            }
+            .story-text p {
+              color: var(--dark-gray);
+              font-family: var(--font-body);
+              font-size: 1rem;
+              line-height: 1.85;
+              margin-bottom: var(--spacing-md);
+            }
+            .story-text p:last-child {
+              margin-bottom: 0;
             }
           </style>
           <div class="story-columns" style="display: contents;">
-            <div>
-              <p style="font-size: 1.125rem; color: var(--dark-gray); margin-bottom: var(--spacing-md); line-height: 1.8;">
+            <div class="story-text">
+              <p>
                 In 2020, Praveg and Rajat found themselves in the same place many ambitious professionals find themselves: staring at a blank Word document, wondering how to distill years of career achievements into a compelling 500-word essay.
               </p>
-              <p style="color: var(--medium-gray); margin-bottom: var(--spacing-md); line-height: 1.8;">
-                The MBA application journey was nothing like they expected. Despite successful careers at J.P. Morgan and leading tech companies, they felt completely lost. <em>Which schools should they target? How do you even begin to craft a "narrative"? What do admissions committees actually want to hear?</em>
+              <p>
+                The MBA application journey was nothing like they expected. Despite successful careers at J.P. Morgan and leading tech companies, they felt completely lost. Which schools should they target? How do you even begin to craft a "narrative"? What do admissions committees actually want to hear?
               </p>
-              <p style="color: var(--medium-gray); line-height: 1.8;">
+              <p>
                 The endless forums, conflicting advice, and pressure of tight deadlines made the process overwhelming and isolating.
               </p>
             </div>
-            <div>
-              <p style="color: var(--medium-gray); margin-bottom: var(--spacing-md); line-height: 1.8;">
+            <div class="story-text">
+              <p>
                 Through months of research, countless essay drafts, and sleepless nights, they eventually cracked the code. Both secured admission to INSEAD, one of the world's most selective MBA programs. But the experience left a mark.
               </p>
-              <p style="color: var(--medium-gray); margin-bottom: var(--spacing-md); line-height: 1.8;">
+              <p>
                 After graduating in 2021, they started helping friends and colleagues with their applications. Word spread. What began as casual advice over coffee turned into a calling. By 2022, they had helped over a dozen candidates secure admits to programs they once thought were out of reach.
               </p>
-              <p style="color: var(--dark-gray); font-weight: 500; line-height: 1.8;">
+              <p>
                 <strong>GradPrix was founded in 2025</strong> to formalize this mission: to be the guide they wished they had.
               </p>
             </div>

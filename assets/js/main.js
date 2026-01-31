@@ -147,13 +147,17 @@ function initSmoothScroll() {
 }
 
 /**
- * Form handling
+ * Form handling with Google Apps Script email integration
  */
+
+// Google Apps Script Web App URL - Replace with your deployed script URL
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxc1nZ7L_rjz6rTjgIhjeyJbG0_ix6c6vr_cZeJVLJp21Ej3vkhqYmzkhnqixzWQdFOVQ/exec';
+
 function initFormHandling() {
   const contactForm = document.getElementById('contactForm');
   
   if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
       e.preventDefault();
       
       // Get form data
@@ -173,14 +177,35 @@ function initFormHandling() {
         return;
       }
       
-      // Simulate form submission (replace with actual API call)
+      // Update button state
       const submitButton = this.querySelector('button[type="submit"]');
       const originalText = submitButton.textContent;
       submitButton.textContent = 'Submitting...';
       submitButton.disabled = true;
       
-      // Simulated API call
-      setTimeout(() => {
+      try {
+        // Send to Google Apps Script
+        const response = await fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors', // Required for Google Apps Script
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            firstName: data.firstName,
+            lastName: data.lastName,
+            email: data.email,
+            phone: data.phone || 'Not provided',
+            targetSchools: data.targetSchools || 'Not specified',
+            applicationRound: data.applicationRound || 'Not selected',
+            service: data.service || 'Not selected',
+            message: data.message || 'No message provided',
+            newsletter: data.newsletter === 'on' ? 'Yes' : 'No',
+            submittedAt: new Date().toISOString()
+          })
+        });
+        
+        // With no-cors, we can't read the response, so we assume success
         // Reset form
         this.reset();
         submitButton.textContent = originalText;
@@ -188,7 +213,13 @@ function initFormHandling() {
         
         // Show success message
         showNotification('Thank you for your inquiry! We\'ll be in touch within 24 hours.', 'success');
-      }, 1500);
+        
+      } catch (error) {
+        console.error('Form submission error:', error);
+        submitButton.textContent = originalText;
+        submitButton.disabled = false;
+        showNotification('Something went wrong. Please try again or email us directly at support@gradprix.com', 'error');
+      }
     });
   }
   

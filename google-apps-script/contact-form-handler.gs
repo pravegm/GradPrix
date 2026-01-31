@@ -21,6 +21,9 @@ const RECIPIENTS = [
 
 const SENDER_NAME = 'GradPrix Website';
 
+// Logo URL (hosted on your website)
+const LOGO_URL = 'https://gradprix.com/assets/images/logo.png';
+
 /**
  * Handles POST requests from the contact form
  */
@@ -88,6 +91,7 @@ function sendTeamNotification(data) {
     <body>
       <div class="container">
         <div class="header">
+          <img src="${LOGO_URL}" alt="GradPrix" style="height: 50px; margin-bottom: 16px;">
           <h1>New Consultation Request</h1>
           <div class="subtitle">GradPrix MBA Admissions</div>
         </div>
@@ -132,6 +136,7 @@ function sendTeamNotification(data) {
           </div>
           
           <div class="footer">
+            <img src="${LOGO_URL}" alt="GradPrix" style="height: 36px; margin-bottom: 12px;">
             <div class="timestamp">📅 Submitted: ${formatDate(data.submittedAt)}</div>
           </div>
         </div>
@@ -208,6 +213,7 @@ function sendUserConfirmation(data) {
     <body>
       <div class="container">
         <div class="header">
+          <img src="${LOGO_URL}" alt="GradPrix" style="height: 50px; margin-bottom: 16px;">
           <h1>Thank You, ${escapeHtml(data.firstName)}!</h1>
           <div class="subtitle">Your MBA Journey Starts Here</div>
         </div>
@@ -250,6 +256,7 @@ function sendUserConfirmation(data) {
         </div>
         
         <div class="footer">
+          <img src="${LOGO_URL}" alt="GradPrix" style="height: 40px; margin-bottom: 16px;">
           <p style="margin: 0; color: #666;">Follow us for MBA tips & insights</p>
           <div class="social-links">
             <a href="https://www.linkedin.com/company/gradprix/">LinkedIn</a> |

@@ -101,7 +101,7 @@ function logToSheet(data) {
     data.firstName || '',
     data.lastName || '',
     data.email || '',
-    data.phone || '',
+    data.phone ? "'" + data.phone : '', // Prefix with apostrophe to force text format
     data.targetSchools || '',
     formatApplicationRound(data.applicationRound),
     formatService(data.service),
@@ -111,6 +111,10 @@ function logToSheet(data) {
   
   // Append the row
   sheet.appendRow(rowData);
+  
+  // Format phone column as plain text to prevent formula interpretation
+  const lastRow = sheet.getLastRow();
+  sheet.getRange(lastRow, 5).setNumberFormat('@');
   
   // Auto-resize columns for better readability (only first time or periodically)
   if (sheet.getLastRow() <= 2) {

@@ -21,6 +21,10 @@ const RECIPIENTS = [
 
 const SENDER_NAME = 'GradPrix Website';
 
+// Google Sheet Configuration
+const SPREADSHEET_ID = '1MbRgQe7Veo-UilPxyDs6VTvbAZiFUwBKLsV2cf0KIZU';
+const SHEET_NAME = 'Sheet1';
+
 /**
  * Handles POST requests from the contact form
  */
@@ -28,6 +32,9 @@ function doPost(e) {
   try {
     // Parse the incoming JSON data
     const data = JSON.parse(e.postData.contents);
+    
+    // Log to Google Sheet
+    logToSheet(data);
     
     // Send notification email to team
     sendTeamNotification(data);
@@ -37,7 +44,7 @@ function doPost(e) {
     
     // Return success response
     return ContentService
-      .createTextOutput(JSON.stringify({ status: 'success', message: 'Emails sent successfully' }))
+      .createTextOutput(JSON.stringify({ status: 'success', message: 'Data logged and emails sent successfully' }))
       .setMimeType(ContentService.MimeType.JSON);
       
   } catch (error) {
@@ -57,6 +64,96 @@ function doGet(e) {
   return ContentService
     .createTextOutput(JSON.stringify({ status: 'ok', message: 'GradPrix Contact Form API is running' }))
     .setMimeType(ContentService.MimeType.JSON);
+}
+
+/**
+ * Logs form submission data to Google Sheet
+ */
+function logToSheet(data) {
+  const spreadsheet = SpreadsheetApp.openById(SPREADSHEET_ID);
+  const sheet = spreadsheet.getSheetByName(SHEET_NAME);
+  
+  // Check if headers exist, if not add them
+  const lastRow = sheet.getLastRow();
+  if (lastRow === 0) {
+    const headers = [
+      'Timestamp',
+      'First Name',
+      'Last Name',
+      'Email',
+      'Phone',
+      'Target Schools',
+      'Application Round',
+      'Service of Interest',
+      'Message',
+      'Newsletter'
+    ];
+    sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
+    sheet.getRange(1, 1, 1, headers.length).setFontWeight('bold');
+    sheet.getRange(1, 1, 1, headers.length).setBackground('#1a2744');
+    sheet.getRange(1, 1, 1, headers.length).setFontColor('#ffffff');
+    sheet.setFrozenRows(1);
+  }
+  
+  // Prepare the row data
+  const rowData = [
+    formatDate(data.submittedAt),
+    data.firstName || '',
+    data.lastName || '',
+    data.email || '',
+    data.phone || '',
+    data.targetSchools || '',
+    formatApplicationRound(data.applicationRound),
+    formatService(data.service),
+    data.message || '',
+    data.newsletter || ''
+  ];
+  
+  // Append the row
+  sheet.appendRow(rowData);
+  
+  // Auto-resize columns for better readability (only first time or periodically)
+  if (sheet.getLastRow() <= 2) {
+    for (let i = 1; i <= rowData.length; i++) {
+      sheet.autoResizeColumn(i);
+    }
+  }
+}
+
+/**
+ * Sets up the sheet headers - Run this once manually if needed
+ */
+function setupSheetHeaders() {
+  const spreadsheet = SpreadsheetApp.openById(SPREADSHEET_ID);
+  const sheet = spreadsheet.getSheetByName(SHEET_NAME);
+  
+  const headers = [
+    'Timestamp',
+    'First Name',
+    'Last Name',
+    'Email',
+    'Phone',
+    'Target Schools',
+    'Application Round',
+    'Service of Interest',
+    'Message',
+    'Newsletter'
+  ];
+  
+  // Clear existing content and set headers
+  sheet.clear();
+  sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
+  sheet.getRange(1, 1, 1, headers.length).setFontWeight('bold');
+  sheet.getRange(1, 1, 1, headers.length).setBackground('#1a2744');
+  sheet.getRange(1, 1, 1, headers.length).setFontColor('#ffffff');
+  sheet.setFrozenRows(1);
+  
+  // Auto-resize columns
+  for (let i = 1; i <= headers.length; i++) {
+    sheet.autoResizeColumn(i);
+  }
+  
+  console.log('Sheet headers set up successfully!');
 }
 
 /**
@@ -365,10 +462,10 @@ function formatDate(isoString) {
 }
 
 /**
- * Test function - Use this to test the email functionality
- * Run this from the Apps Script editor to verify emails are working
+ * Test function - Use this to test the full functionality (Sheet + Emails)
+ * Run this from the Apps Script editor to verify everything is working
  */
-function testEmailSending() {
+function testFullSubmission() {
   const testData = {
     firstName: 'Test',
     lastName: 'User',
@@ -377,13 +474,40 @@ function testEmailSending() {
     targetSchools: 'Harvard, Stanford, Wharton',
     applicationRound: 'r1-2026',
     service: 'comprehensive',
-    message: 'This is a test message to verify the email functionality is working correctly.',
+    message: 'This is a test message to verify the full functionality is working correctly.',
     newsletter: 'Yes',
     submittedAt: new Date().toISOString()
   };
   
+  // Log to sheet
+  logToSheet(testData);
+  console.log('Data logged to sheet!');
+  
+  // Send emails
   sendTeamNotification(testData);
   sendUserConfirmation(testData);
+  console.log('Emails sent successfully!');
   
-  console.log('Test emails sent successfully!');
+  console.log('Full test completed!');
+}
+
+/**
+ * Test function - Only test sheet logging (no emails)
+ */
+function testSheetOnly() {
+  const testData = {
+    firstName: 'Sheet',
+    lastName: 'Test',
+    email: 'test@example.com',
+    phone: '+1 999 999 9999',
+    targetSchools: 'LBS, INSEAD, Oxford',
+    applicationRound: 'r2-2026',
+    service: 'essays',
+    message: 'Testing sheet logging only.',
+    newsletter: 'No',
+    submittedAt: new Date().toISOString()
+  };
+  
+  logToSheet(testData);
+  console.log('Test data logged to sheet successfully!');
 }

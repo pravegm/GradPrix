@@ -250,7 +250,6 @@ function sendUserConfirmation(data) {
         </div>
         
         <div class="footer">
-          <img src="${LOGO_URL}" alt="GradPrix" style="height: 40px; margin-bottom: 16px;">
           <p style="margin: 0; color: #666;">Follow us for MBA tips & insights</p>
           <div class="social-links">
             <a href="https://www.linkedin.com/company/gradprix/">LinkedIn</a> |

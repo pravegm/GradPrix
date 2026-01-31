@@ -574,51 +574,135 @@
     }
     
     @media (max-width: 768px) {
+      .blog-post-hero {
+        padding: 100px 16px 40px;
+        min-height: auto;
+      }
+      
       .blog-post-title {
-        font-size: 2rem;
+        font-size: 1.5rem;
+        line-height: 1.3;
+      }
+      
+      .blog-post-meta {
+        font-size: 12px;
+        flex-wrap: wrap;
+        gap: 8px;
       }
       
       .blog-post-hero-image {
-        height: 300px;
+        height: 200px;
+        margin-top: 24px;
       }
       
       .hero-globe {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
       }
       
       .globe-ring:nth-child(1) {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
       }
       
       .globe-ring:nth-child(2) {
-        width: 120px;
-        height: 150px;
-        left: 15px;
+        width: 95px;
+        height: 120px;
+        left: 12px;
       }
       
       .globe-ring:nth-child(3) {
-        width: 90px;
-        height: 150px;
-        left: 30px;
+        width: 70px;
+        height: 120px;
+        left: 25px;
+      }
+      
+      .blog-post-content {
+        padding: 32px 16px;
       }
       
       .blog-post-content h2 {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
+        margin-top: 32px;
+      }
+      
+      .blog-post-content h3 {
+        font-size: 1.1rem;
+      }
+      
+      .blog-post-content p,
+      .blog-post-content li {
+        font-size: 15px;
+        line-height: 1.7;
       }
       
       .stat-highlight {
         flex-direction: column;
         text-align: center;
+        padding: 20px 16px;
+      }
+      
+      .myth-box,
+      .reality-box {
+        padding: 16px;
+      }
+      
+      .myth-box h4,
+      .reality-box h4 {
+        font-size: 14px;
+      }
+      
+      .experience-card {
+        padding: 20px 16px;
+      }
+      
+      .experience-card h4 {
+        font-size: 1rem;
+      }
+      
+      blockquote {
+        padding: 16px 20px;
+        font-size: 1rem;
+        margin: 24px 0;
       }
       
       .gradprix-cta {
-        padding: var(--spacing-xl);
+        padding: 32px 20px;
+        margin: 32px 0;
       }
       
       .gradprix-cta h3 {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
+      }
+      
+      .gradprix-cta p {
+        font-size: 14px;
+      }
+      
+      .gradprix-cta .btn {
+        width: 100%;
+        padding: 14px 24px;
+      }
+      
+      .related-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .blog-post-title {
+        font-size: 1.35rem;
+      }
+      
+      .hero-globe {
+        width: 100px;
+        height: 100px;
+      }
+      
+      .blog-post-content p,
+      .blog-post-content li {
+        font-size: 14px;
       }
     }
   </style>

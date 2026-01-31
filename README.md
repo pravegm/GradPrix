@@ -1,66 +1,218 @@
 # GradPrix Website
 
-Premium MBA admissions consulting website for GradPrix.
+Premium MBA admissions consulting website for **GradPrix** - helping candidates secure admission to Tier 1 and Tier 2 MBA programs worldwide.
 
-## Run Locally
+🌐 **Live Site:** [www.gradprix.com](https://www.gradprix.com)
 
-Simply open `index.html` in your browser, or use a local server:
+## Quick Start
 
-**Using Python:**
+### Run Locally
+
+**Option 1: Python Server (Recommended)**
 ```bash
-python -m http.server 8000
+cd /path/to/GradPrix
+python3 -m http.server 8000
 ```
-Then visit `http://localhost:8000`
+Visit `http://localhost:8000`
 
-**Using VS Code:**
+**Option 2: VS Code Live Server**
 Install the "Live Server" extension and click "Go Live"
+
+**Option 3: Direct File**
+Simply open `index.html` in your browser (some features may not work due to CORS)
 
 ## Project Structure
 
 ```
 GradPrix/
-├── index.html              # Homepage
-├── about.html              # About Us page
-├── services.html           # Services page
-├── success-stories.html    # Testimonials and results
-├── resources.html          # Blog listing page
-├── faq.html                # FAQ page
-├── contact.html            # Contact page
-├── blog/                   # Individual blog posts
+├── index.html                    # Homepage with hero, testimonials, school logos
+├── about.html                    # Company story, mission, and team
+├── services.html                 # Consulting packages and pricing
+├── success-stories.html          # Client testimonials and results
+├── resources.html                # Blog listing page
+├── faq.html                      # Frequently asked questions
+├── contact.html                  # Contact form and information
+│
+├── blog/                         # Individual blog posts (SEO optimized)
 │   ├── mba-for-all-backgrounds.html
 │   ├── international-experience-myths.html
 │   ├── extracurriculars-mba-applications.html
 │   └── too-young-for-mba-myth.html
+│
 ├── assets/
 │   ├── css/
-│   │   └── styles.css      # Main stylesheet
+│   │   └── styles.css            # Main stylesheet (3500+ lines)
 │   ├── js/
-│   │   └── main.js         # JavaScript functionality
+│   │   └── main.js               # Interactive functionality
 │   └── images/
-│       ├── logo.png        # GradPrix logo
-│       ├── team-*.jpg      # Team photos
-│       └── schools/        # Partner school logos
+│       ├── logo.png              # GradPrix logo
+│       ├── team-praveg.jpg       # Co-founder photo
+│       ├── team-rajat.jpg        # Co-founder photo
+│       ├── team-rangolie.jpg     # Team member photo
+│       └── schools/              # Partner MBA school logos
+│           ├── insead.png
+│           ├── lbs.png
+│           ├── oxford.png
+│           ├── cambridge.png
+│           ├── iese.png
+│           ├── ie.png
+│           ├── esade.png
+│           ├── hkust.png
+│           ├── darden.png
+│           ├── tuck.png
+│           └── manchester.png
+│
 └── README.md
 ```
 
-## Pages
+## Pages Overview
 
-1. **Homepage** - Hero, services overview, testimonials, target schools
-2. **About Us** - Company story, mission, team bios
-3. **Services** - Tailored consulting packages
-4. **Success Stories** - Client testimonials and admission results
-5. **Blog** - MBA insights and articles
-6. **FAQ** - Common questions
-7. **Contact** - Contact form and info
+| Page | Description |
+|------|-------------|
+| **Homepage** | Hero section, key stats, testimonials carousel, partner school logos |
+| **About Us** | Founding story, mission statement, team profiles with credentials |
+| **Services** | Detailed consulting packages with features and CTAs |
+| **Success Stories** | Featured testimonial, client results grid, school logos carousel |
+| **Blog** | Featured article banner, blog cards grid, newsletter signup |
+| **FAQ** | Accordion-style Q&A covering common applicant questions |
+| **Contact** | Contact form, email/phone info, consultation booking |
+
+## Blog Articles
+
+Four comprehensive, SEO-optimized blog posts:
+
+1. **MBA for All Backgrounds** (Sep 2025) - Why diverse backgrounds are valued
+2. **International Experience Myths** (Nov 2025) - Busting common misconceptions
+3. **Extracurriculars in MBA Applications** (Dec 2025) - Quality over quantity
+4. **Am I Too Young for an MBA?** (Jan 2026) - Debunking the experience myth
+
+Each blog includes:
+- Schema.org Article markup
+- Meta descriptions and keywords
+- Custom hero visuals (CSS-based)
+- GradPrix CTA section
+- Related articles
+
+## Technical Features
+
+### Design
+- **Typography:** Cormorant Garamond (headings) + Montserrat (body)
+- **Color Palette:** Navy (#1a2744), Gold (#c9a227), Off-white backgrounds
+- **Animations:** Scroll-triggered reveals, hover effects, animated carousels
+- **Components:** Cards with shadows, glassmorphism effects, gradient overlays
+
+### Performance
+- Lazy loading for images (`loading="lazy"`)
+- Preload for critical resources
+- Font preconnect to Google Fonts
+- Optimized images (compressed)
+
+### Responsive Design
+- **Desktop:** Full layouts, multi-column grids
+- **Tablet (≤968px):** Hamburger menu, adjusted grids
+- **Mobile (≤768px):** Single-column layouts, stacked elements
+- **Small Mobile (≤480px):** Further size reductions
+
+Mobile features:
+- Touch-friendly targets (44px minimum)
+- No horizontal scrolling
+- Readable typography (15-16px base)
+- Full-width buttons and forms
+
+### JavaScript Features
+- Mobile hamburger menu toggle
+- Smooth scroll navigation
+- FAQ accordion
+- Form handling (client-side validation)
+- Scroll-triggered animations
+- Counter animations
+
+## Form Handling
+
+The contact form currently uses **client-side only** handling:
+- Form validation
+- Success notification display
+- No backend/email integration
+
+To enable actual form submissions, integrate with:
+- **Formspree:** Add `action="https://formspree.io/f/YOUR_ID"` to form
+- **Netlify Forms:** Add `netlify` attribute to form
+- **Custom Backend:** Set up API endpoint
 
 ## Deployment
 
-Static HTML/CSS/JS - deploy to any hosting service:
-- Netlify
-- Vercel  
-- GitHub Pages
-- Traditional hosting via FTP
+### Static Hosting (Recommended)
+
+**Netlify:**
+1. Push to GitHub
+2. Connect repo to Netlify
+3. Set publish directory: `/` (root)
+4. Configure custom domain in Netlify dashboard
+
+**Vercel:**
+1. Push to GitHub
+2. Import project to Vercel
+3. Deploy (auto-detects static site)
+
+**GitHub Pages:**
+1. Push to GitHub
+2. Settings → Pages → Source: main branch
+3. Wait for deployment
+
+### Custom Domain Setup
+
+For `www.gradprix.com`:
+1. Add domain in hosting dashboard
+2. Update DNS records:
+   - **A Record:** Point to hosting IP
+   - **CNAME:** `www` → hosting URL
+3. Enable HTTPS (auto with most hosts)
+
+## Development
+
+### File Naming
+- HTML pages: lowercase, hyphens (`success-stories.html`)
+- Images: descriptive names (`team-praveg.jpg`)
+- CSS/JS: single main files
+
+### CSS Organization
+The `styles.css` file is organized into sections:
+1. CSS Variables (colors, spacing, typography)
+2. Reset & Base styles
+3. Layout utilities
+4. Navigation
+5. Hero section
+6. Components (cards, buttons, forms)
+7. Page-specific styles
+8. Media queries (responsive)
+
+### Adding New Blog Posts
+1. Create new file in `blog/` directory
+2. Copy structure from existing blog post
+3. Update content, meta tags, schema markup
+4. Add card to `resources.html`
+5. Update related articles in other posts
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Mobile browsers (iOS Safari, Chrome for Android)
+
+## Credits
+
+- **Fonts:** Google Fonts (Cormorant Garamond, Montserrat)
+- **Icons:** SVG icons (inline)
+- **School Logos:** Official logos used with permission
+
+## Contact
+
+**GradPrix**
+- Email: hello@gradprix.com
+- Phone: +1 (555) 123-4567
 
 ## License
 
-Private - GradPrix © 2025
+Private - GradPrix © 2025. All rights reserved.

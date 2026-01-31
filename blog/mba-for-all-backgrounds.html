@@ -487,29 +487,128 @@
     }
     
     @media (max-width: 768px) {
+      .blog-post-hero {
+        padding: 100px 16px 40px;
+        min-height: auto;
+      }
+      
       .blog-post-title {
-        font-size: 2rem;
+        font-size: 1.5rem;
+        line-height: 1.3;
+      }
+      
+      .blog-post-meta {
+        font-size: 12px;
+        flex-wrap: wrap;
+        gap: 8px;
       }
       
       .blog-post-hero-image {
-        height: 250px;
+        height: 200px;
+        margin-top: 24px;
+      }
+      
+      .blog-post-content {
+        padding: 32px 16px;
       }
       
       .blog-post-content h2 {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
+        margin-top: 32px;
+      }
+      
+      .blog-post-content h3 {
+        font-size: 1.1rem;
+      }
+      
+      .blog-post-content p,
+      .blog-post-content li {
+        font-size: 15px;
+        line-height: 1.7;
+      }
+      
+      .blog-post-content ul,
+      .blog-post-content ol {
+        padding-left: 20px;
       }
       
       .stat-highlight {
         flex-direction: column;
         text-align: center;
+        padding: 20px 16px;
+        gap: 8px;
+      }
+      
+      .stat-highlight .stat-number {
+        font-size: 2rem;
+      }
+      
+      .background-card {
+        padding: 20px 16px;
+      }
+      
+      .background-card h3 {
+        font-size: 1rem;
+      }
+      
+      .highlight-box {
+        padding: 20px 16px;
+      }
+      
+      .highlight-box h4 {
+        font-size: 1rem;
+      }
+      
+      blockquote {
+        padding: 16px 20px;
+        font-size: 1rem;
+        margin: 24px 0;
       }
       
       .gradprix-cta {
-        padding: var(--spacing-xl);
+        padding: 32px 20px;
+        margin: 32px 0;
       }
       
       .gradprix-cta h3 {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
+      }
+      
+      .gradprix-cta p {
+        font-size: 14px;
+      }
+      
+      .gradprix-cta .btn {
+        width: 100%;
+        padding: 14px 24px;
+      }
+      
+      .related-articles {
+        padding: 32px 16px;
+      }
+      
+      .related-articles h3 {
+        font-size: 1.25rem;
+      }
+      
+      .related-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .blog-post-title {
+        font-size: 1.35rem;
+      }
+      
+      .blog-post-content p,
+      .blog-post-content li {
+        font-size: 14px;
+      }
+      
+      .stat-highlight .stat-number {
+        font-size: 1.75rem;
       }
     }
   </style>

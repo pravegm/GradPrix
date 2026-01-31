@@ -113,11 +113,11 @@ function logToSheet(data) {
   sheet.appendRow(rowData);
   
   // Format phone column as plain text to prevent formula interpretation
-  const lastRow = sheet.getLastRow();
-  sheet.getRange(lastRow, 5).setNumberFormat('@');
+  const newRow = sheet.getLastRow();
+  sheet.getRange(newRow, 5).setNumberFormat('@');
   
   // Auto-resize columns for better readability (only first time or periodically)
-  if (sheet.getLastRow() <= 2) {
+  if (newRow <= 2) {
     for (let i = 1; i <= rowData.length; i++) {
       sheet.autoResizeColumn(i);
     }

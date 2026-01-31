@@ -562,48 +562,132 @@
     }
     
     @media (max-width: 768px) {
+      .blog-post-hero {
+        padding: 100px 16px 40px;
+        min-height: auto;
+      }
+      
       .blog-post-title {
-        font-size: 2rem;
+        font-size: 1.5rem;
+        line-height: 1.3;
+      }
+      
+      .blog-post-meta {
+        font-size: 12px;
+        flex-wrap: wrap;
+        gap: 8px;
       }
       
       .blog-post-hero-image {
-        height: 300px;
+        height: 200px;
+        margin-top: 24px;
       }
       
       .hero-activities {
-        gap: 10px;
+        gap: 8px;
       }
       
       .hero-activity-item {
-        width: 55px;
-        height: 55px;
-        border-radius: 14px;
+        width: 45px;
+        height: 45px;
+        border-radius: 12px;
       }
       
       .hero-activity-item svg {
-        width: 24px;
-        height: 24px;
+        width: 20px;
+        height: 20px;
+      }
+      
+      .blog-post-content {
+        padding: 32px 16px;
       }
       
       .blog-post-content h2 {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
+        margin-top: 32px;
+      }
+      
+      .blog-post-content h3 {
+        font-size: 1.1rem;
+      }
+      
+      .blog-post-content p,
+      .blog-post-content li {
+        font-size: 15px;
+        line-height: 1.7;
       }
       
       .stat-highlight {
         flex-direction: column;
         text-align: center;
+        padding: 20px 16px;
+      }
+      
+      .activity-card {
+        padding: 20px 16px;
+      }
+      
+      .activity-card h4 {
+        font-size: 1rem;
       }
       
       .do-dont-grid {
         grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      
+      .do-box,
+      .dont-box {
+        padding: 20px 16px;
+      }
+      
+      .quality-meter {
+        padding: 20px 16px;
+      }
+      
+      blockquote {
+        padding: 16px 20px;
+        font-size: 1rem;
+        margin: 24px 0;
       }
       
       .gradprix-cta {
-        padding: var(--spacing-xl);
+        padding: 32px 20px;
+        margin: 32px 0;
       }
       
       .gradprix-cta h3 {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
+      }
+      
+      .gradprix-cta p {
+        font-size: 14px;
+      }
+      
+      .gradprix-cta .btn {
+        width: 100%;
+        padding: 14px 24px;
+      }
+      
+      .related-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .blog-post-title {
+        font-size: 1.35rem;
+      }
+      
+      .hero-activity-item {
+        width: 40px;
+        height: 40px;
+      }
+      
+      .blog-post-content p,
+      .blog-post-content li {
+        font-size: 14px;
       }
     }
   </style>

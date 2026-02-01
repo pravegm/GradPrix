@@ -172,14 +172,45 @@ Currently deployed via **GitHub Pages** with automatic deployment on push to mas
 1. Import project to Vercel
 2. Deploy (auto-detects static site)
 
-### Custom Domain Setup
+### Custom Domain Setup (www.gradprix.com)
 
-For `www.gradprix.com`:
-1. Add domain in hosting dashboard
-2. Update DNS records:
-   - **A Record:** Point to hosting IP
-   - **CNAME:** `www` → hosting URL
-3. Enable HTTPS (auto with most hosts)
+**Step 1: GitHub Pages Configuration**
+1. Go to your repository on GitHub
+2. Navigate to **Settings** → **Pages**
+3. Under "Custom domain", enter: `www.gradprix.com`
+4. Check "Enforce HTTPS" (will be available after DNS propagates)
+
+**Step 2: GoDaddy DNS Configuration**
+1. Log into your GoDaddy account
+2. Go to **My Products** → **Domains** → Click **DNS** for `gradprix.com`
+3. Add/Update the following DNS records:
+   - **A Record:** 
+     - Name: `@` (or leave blank)
+     - Value: `185.199.108.153`
+     - TTL: 600 (or default)
+   - **A Record:**
+     - Name: `@` (or leave blank)
+     - Value: `185.199.109.153`
+     - TTL: 600
+   - **A Record:**
+     - Name: `@` (or leave blank)
+     - Value: `185.199.110.153`
+     - TTL: 600
+   - **A Record:**
+     - Name: `@` (or leave blank)
+     - Value: `185.199.111.153`
+     - TTL: 600
+   - **CNAME Record:**
+     - Name: `www`
+     - Value: `pravegm.github.io`
+     - TTL: 600
+
+**Step 3: Verify Setup**
+- The `CNAME` file in the repository root contains `www.gradprix.com`
+- After DNS propagation (can take 24-48 hours), your site will be accessible at `www.gradprix.com`
+- GitHub will automatically provision SSL certificate for HTTPS
+
+**Note:** DNS changes can take up to 48 hours to fully propagate globally.
 
 ## Development
 

@@ -37,7 +37,15 @@ GradPrix/
 │   ├── mba-for-all-backgrounds.html
 │   ├── international-experience-myths.html
 │   ├── extracurriculars-mba-applications.html
-│   └── too-young-for-mba-myth.html
+│   ├── too-young-for-mba-myth.html
+│   └── european-vs-usa-mba.html
+│
+├── google-apps-script/           # Backend form handling
+│   └── contact-form-handler.gs   # Google Apps Script for form submissions
+│
+├── .github/
+│   └── workflows/
+│       └── deploy.yml            # GitHub Actions for auto-deployment
 │
 ├── assets/
 │   ├── css/
@@ -79,12 +87,13 @@ GradPrix/
 
 ## Blog Articles
 
-Four comprehensive, SEO-optimized blog posts:
+Five comprehensive, SEO-optimized blog posts:
 
 1. **MBA for All Backgrounds** (Sep 2025) - Why diverse backgrounds are valued
 2. **International Experience Myths** (Nov 2025) - Busting common misconceptions
-3. **Extracurriculars in MBA Applications** (Dec 2025) - Quality over quantity
-4. **Am I Too Young for an MBA?** (Jan 2026) - Debunking the experience myth
+3. **European vs. USA MBA** (Nov 2025) - Complete guide to choosing your path
+4. **Extracurriculars in MBA Applications** (Dec 2025) - Quality over quantity
+5. **Am I Too Young for an MBA?** (Jan 2026) - Debunking the experience myth
 
 Each blog includes:
 - Schema.org Article markup
@@ -129,35 +138,39 @@ Mobile features:
 
 ## Form Handling
 
-The contact form currently uses **client-side only** handling:
-- Form validation
-- Success notification display
-- No backend/email integration
+The contact form uses **Google Apps Script** for backend processing:
 
-To enable actual form submissions, integrate with:
-- **Formspree:** Add `action="https://formspree.io/f/YOUR_ID"` to form
-- **Netlify Forms:** Add `netlify` attribute to form
-- **Custom Backend:** Set up API endpoint
+- **Email Notifications:** Sends formatted emails to team on new submissions
+- **Google Sheets Logging:** All submissions logged to spreadsheet for tracking
+- **Auto-responder:** Sends confirmation email to applicants
+- **Validation:** Both client-side and server-side validation
+
+### Setup
+The Google Apps Script (`google-apps-script/contact-form-handler.gs`) handles:
+1. Form data validation
+2. Email dispatch to GradPrix team
+3. Applicant confirmation emails
+4. Sheet logging with timestamps
 
 ## Deployment
 
-### Static Hosting (Recommended)
+Currently deployed via **GitHub Pages** with automatic deployment on push to master.
+
+### GitHub Pages (Current)
+1. Push changes to `master` branch
+2. GitHub Actions workflow (`.github/workflows/deploy.yml`) triggers automatically
+3. Site deploys to `pravegm.github.io/GradPrix`
+
+### Alternative Hosting Options
 
 **Netlify:**
-1. Push to GitHub
-2. Connect repo to Netlify
-3. Set publish directory: `/` (root)
-4. Configure custom domain in Netlify dashboard
+1. Connect repo to Netlify
+2. Set publish directory: `/` (root)
+3. Configure custom domain
 
 **Vercel:**
-1. Push to GitHub
-2. Import project to Vercel
-3. Deploy (auto-detects static site)
-
-**GitHub Pages:**
-1. Push to GitHub
-2. Settings → Pages → Source: main branch
-3. Wait for deployment
+1. Import project to Vercel
+2. Deploy (auto-detects static site)
 
 ### Custom Domain Setup
 
@@ -210,8 +223,9 @@ The `styles.css` file is organized into sections:
 ## Contact
 
 **GradPrix**
-- Email: hello@gradprix.com
-- Phone: +1 (555) 123-4567
+- Email: support@gradprix.com
+- Phone: +44 7865 267776
+- Location: London, UK
 
 ## License
 

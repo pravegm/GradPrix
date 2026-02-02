@@ -129,7 +129,7 @@ Mobile features:
 - Full-width buttons and forms
 
 ### JavaScript Features
-- Mobile hamburger menu toggle
+- **Mobile hamburger menu** with full-screen overlay, smooth animations, and touch support
 - Smooth scroll navigation
 - FAQ accordion
 - Form handling (client-side validation)

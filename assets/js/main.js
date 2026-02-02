@@ -46,9 +46,214 @@ function initMobileMenu() {
   
   if (!menuToggle || !navbarMenu) return;
   
-  menuToggle.addEventListener('click', function() {
+  // Toggle menu function
+  function toggleMenu(e) {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    
     navbarMenu.classList.toggle('active');
     menuToggle.classList.toggle('active');
+    
+    // Force show menu - move to body to escape stacking context issues
+    const navbarLinks = navbarMenu.querySelector('.navbar-links');
+    const navbarCta = navbarMenu.querySelector('.navbar-cta');
+    const allLinks = navbarMenu.querySelectorAll('a');
+    
+    if (navbarMenu.classList.contains('active')) {
+      // Move menu to body to escape navbar stacking context
+      if (navbarMenu.parentElement !== document.body) {
+        navbarMenu._originalParent = navbarMenu.parentElement;
+        navbarMenu._originalNextSibling = navbarMenu.nextSibling;
+        document.body.appendChild(navbarMenu);
+      }
+      
+      navbarMenu.style.cssText = `
+        display: flex !important;
+        flex-direction: column !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        background: linear-gradient(180deg, #fafbfc 0%, #f5f6f8 100%) !important;
+        z-index: 2147483647 !important;
+        padding: 90px 24px 40px 24px !important;
+        gap: 12px !important;
+        overflow-y: auto !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        animation: menuSlideIn 0.3s ease-out !important;
+      `;
+      
+      // Add animation keyframes if not exists
+      if (!document.getElementById('mobile-menu-animations')) {
+        const style = document.createElement('style');
+        style.id = 'mobile-menu-animations';
+        style.textContent = `
+          @keyframes menuSlideIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+        `;
+        document.head.appendChild(style);
+      }
+      
+      // Add close button to the menu
+      let closeBtn = navbarMenu.querySelector('.mobile-menu-close');
+      if (!closeBtn) {
+        closeBtn = document.createElement('button');
+        closeBtn.className = 'mobile-menu-close';
+        closeBtn.innerHTML = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>`;
+        closeBtn.style.cssText = `
+          position: absolute !important;
+          top: 24px !important;
+          right: 24px !important;
+          width: 48px !important;
+          height: 48px !important;
+          border: none !important;
+          background: #1a2744 !important;
+          border-radius: 50% !important;
+          color: #FFFFFF !important;
+          cursor: pointer !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          z-index: 2147483647 !important;
+          box-shadow: 0 4px 12px rgba(26, 39, 68, 0.3) !important;
+          transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+        `;
+        closeBtn.addEventListener('click', function() {
+          toggleMenu();
+        });
+        closeBtn.addEventListener('mouseenter', function() {
+          this.style.transform = 'scale(1.05)';
+          this.style.boxShadow = '0 6px 16px rgba(26, 39, 68, 0.4)';
+        });
+        closeBtn.addEventListener('mouseleave', function() {
+          this.style.transform = 'scale(1)';
+          this.style.boxShadow = '0 4px 12px rgba(26, 39, 68, 0.3)';
+        });
+        navbarMenu.insertBefore(closeBtn, navbarMenu.firstChild);
+      }
+      
+      // Add logo at top
+      let menuLogo = navbarMenu.querySelector('.mobile-menu-logo');
+      if (!menuLogo) {
+        menuLogo = document.createElement('div');
+        menuLogo.className = 'mobile-menu-logo';
+        menuLogo.innerHTML = '<img src="assets/images/logo.png" alt="GradPrix" style="height: 56px;">';
+        menuLogo.style.cssText = `
+          position: absolute !important;
+          top: 24px !important;
+          left: 24px !important;
+        `;
+        navbarMenu.insertBefore(menuLogo, navbarMenu.firstChild);
+      }
+      
+      // Style child elements
+      if (navbarLinks) {
+        navbarLinks.style.cssText = `
+          display: flex !important;
+          flex-direction: column !important;
+          gap: 8px !important;
+          width: 100% !important;
+        `;
+      }
+      if (navbarCta) {
+        navbarCta.style.cssText = `
+          display: flex !important;
+          flex-direction: column !important;
+          width: 100% !important;
+          margin-top: 24px !important;
+          padding-top: 24px !important;
+          border-top: 1px solid rgba(26, 39, 68, 0.1) !important;
+        `;
+      }
+      
+      // Style navigation links
+      const navLinksOnly = navbarLinks ? navbarLinks.querySelectorAll('a') : [];
+      navLinksOnly.forEach((link, index) => {
+        const isActive = link.classList.contains('active');
+        link.style.cssText = `
+          display: block !important;
+          width: 100% !important;
+          padding: 18px 24px !important;
+          text-align: center !important;
+          font-family: 'Montserrat', sans-serif !important;
+          font-size: 15px !important;
+          font-weight: ${isActive ? '600' : '500'} !important;
+          letter-spacing: 0.5px !important;
+          color: ${isActive ? '#FFFFFF' : '#1a2744'} !important;
+          background: ${isActive ? 'linear-gradient(135deg, #1a2744 0%, #2d3f5f 100%)' : '#FFFFFF'} !important;
+          border: none !important;
+          border-radius: 12px !important;
+          text-decoration: none !important;
+          box-shadow: ${isActive ? '0 4px 12px rgba(26, 39, 68, 0.25)' : '0 2px 8px rgba(0, 0, 0, 0.06)'} !important;
+          transition: all 0.2s ease !important;
+          animation: menuItemFadeIn 0.3s ease-out ${index * 0.05}s both !important;
+        `;
+      });
+      
+      // Style CTA button
+      const ctaBtn = navbarCta ? navbarCta.querySelector('.btn') : null;
+      if (ctaBtn) {
+        ctaBtn.style.cssText = `
+          display: block !important;
+          width: 100% !important;
+          padding: 18px 24px !important;
+          text-align: center !important;
+          font-family: 'Montserrat', sans-serif !important;
+          font-size: 14px !important;
+          font-weight: 600 !important;
+          letter-spacing: 1px !important;
+          text-transform: uppercase !important;
+          color: #FFFFFF !important;
+          background: linear-gradient(135deg, #c9a227 0%, #e8d48a 50%, #c9a227 100%) !important;
+          background-size: 200% 100% !important;
+          border: none !important;
+          border-radius: 12px !important;
+          text-decoration: none !important;
+          box-shadow: 0 4px 16px rgba(201, 162, 39, 0.35) !important;
+          animation: menuItemFadeIn 0.3s ease-out 0.4s both !important;
+        `;
+      }
+      
+      // Add item fade-in animation
+      if (!document.getElementById('mobile-menu-item-animations')) {
+        const itemStyle = document.createElement('style');
+        itemStyle.id = 'mobile-menu-item-animations';
+        itemStyle.textContent = `
+          @keyframes menuItemFadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+        `;
+        document.head.appendChild(itemStyle);
+      }
+    } else {
+      // Move menu back to its original position
+      if (navbarMenu._originalParent) {
+        navbarMenu._originalParent.insertBefore(navbarMenu, navbarMenu._originalNextSibling);
+        delete navbarMenu._originalParent;
+        delete navbarMenu._originalNextSibling;
+      }
+      
+      // Remove added elements
+      const closeBtn = navbarMenu.querySelector('.mobile-menu-close');
+      const menuLogo = navbarMenu.querySelector('.mobile-menu-logo');
+      if (closeBtn) closeBtn.remove();
+      if (menuLogo) menuLogo.remove();
+      
+      // Clear all inline styles
+      navbarMenu.style.cssText = '';
+      if (navbarLinks) navbarLinks.style.cssText = '';
+      if (navbarCta) navbarCta.style.cssText = '';
+      allLinks.forEach(link => {
+        link.style.cssText = '';
+      });
+    }
     
     // Toggle body scroll when menu is open
     document.body.style.overflow = navbarMenu.classList.contains('active') ? 'hidden' : '';
@@ -64,6 +269,27 @@ function initMobileMenu() {
       spans[1].style.opacity = '';
       spans[2].style.transform = '';
     }
+  }
+  
+  // Track if touch was used to prevent double-triggering
+  let touchUsed = false;
+  
+  menuToggle.addEventListener('touchstart', function() {
+    touchUsed = true;
+  }, { passive: true });
+  
+  menuToggle.addEventListener('touchend', function(e) {
+    e.preventDefault();
+    toggleMenu(e);
+  });
+  
+  menuToggle.addEventListener('click', function(e) {
+    // Skip if touch event already handled this
+    if (touchUsed) {
+      touchUsed = false;
+      return;
+    }
+    toggleMenu(e);
   });
   
   // Close menu when clicking on a link

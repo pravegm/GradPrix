@@ -3626,10 +3626,16 @@ img {
   }
   
   /* ==========================================================================
-     PREVENT INTERNAL SCROLLING ON MOBILE
+     PREVENT INTERNAL SCROLLING ON MOBILE - COMPREHENSIVE FIX
      ========================================================================== */
   
-  /* Remove overflow hidden from cards and containers that might trap scrolling */
+  /* Global touch behavior - allow scroll to pass through */
+  * {
+    touch-action: manipulation;
+    -webkit-overflow-scrolling: auto;
+  }
+  
+  /* Remove ALL overflow constraints from content elements */
   .card,
   .service-card,
   .testimonial-card,
@@ -3638,16 +3644,37 @@ img {
   .faq-item,
   .contact-item,
   .stat-item,
-  .process-step {
+  .process-step,
+  .process-grid,
+  .process-number,
+  .services-grid,
+  .team-grid,
+  .testimonials-grid,
+  .testimonial-grid,
+  .blog-grid,
+  .stats-grid,
+  .school-logos-grid,
+  .faq-container {
     overflow: visible !important;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
+    max-height: none !important;
+    height: auto !important;
+    overscroll-behavior: auto !important;
   }
   
-  /* Ensure all content sections flow naturally */
+  /* Ensure all sections flow naturally without scroll traps */
+  section,
+  .section,
   .bg-off-white,
   .bg-white,
   [class*="section"] {
     overflow: visible !important;
+    overflow-x: visible !important;
+    overflow-y: visible !important;
     max-height: none !important;
+    height: auto !important;
+    overscroll-behavior: auto !important;
   }
   
   /* Fix hero section */
@@ -3669,16 +3696,46 @@ img {
     overflow: visible !important;
   }
   
+  /* Fix page headers */
+  .page-header {
+    overflow: visible !important;
+  }
+  
+  /* Remove overflow from all div containers inside sections */
+  section > .container,
+  section > .container > div,
+  .section > .container,
+  .section > .container > div {
+    overflow: visible !important;
+    max-height: none !important;
+  }
+  
+  /* Override any inline grid styles that might create scroll containers */
+  div[style*="display: grid"],
+  div[style*="display:grid"] {
+    overflow: visible !important;
+    max-height: none !important;
+  }
+  
+  /* Override ALL inline overflow styles */
+  [style*="overflow: hidden"],
+  [style*="overflow:hidden"],
+  a[style*="overflow"],
+  div[style*="overflow"] {
+    overflow: visible !important;
+  }
+  
   /* Ensure body handles all scrolling */
   html {
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: scroll !important;
+    scroll-behavior: smooth;
   }
   
   body {
     overflow-x: hidden;
-    overflow-y: visible;
-    -webkit-overflow-scrolling: touch;
+    overflow-y: visible !important;
+    overscroll-behavior-y: none;
   }
 }
 
@@ -3721,5 +3778,25 @@ img {
   
   .footer-brand img {
     height: 40px;
+  }
+  
+  /* Extra small - ensure no internal scrolling */
+  * {
+    touch-action: manipulation;
+  }
+  
+  section,
+  .section,
+  .process-grid,
+  .service-card,
+  .testimonial-card,
+  .team-card,
+  .blog-card,
+  .stat-item,
+  .process-step,
+  div[style*="display: grid"] {
+    overflow: visible !important;
+    max-height: none !important;
+    height: auto !important;
   }
 }

@@ -377,6 +377,10 @@
           flex-shrink: 0;
           width: var(--set-width);
         }
+        /* Hide third set on desktop */
+        .logo-carousel-set:nth-child(3) {
+          display: none;
+        }
         .logo-carousel-item {
           flex-shrink: 0;
           width: var(--logo-width);
@@ -417,6 +421,10 @@
             margin-left: 0 !important;
             margin-right: 0 !important;
           }
+          .logo-carousel-track {
+            width: calc(var(--set-width) * 3);
+            animation: scrollLogosMobile 25s linear infinite;
+          }
           .logo-carousel-item {
             height: 60px;
             padding: 10px 16px;
@@ -429,11 +437,18 @@
           .logo-carousel::after {
             width: 40px;
           }
+          /* Show third set on mobile */
+          .logo-carousel-set:nth-child(3) {
+            display: flex;
+          }
         }
         @media (max-width: 480px) {
           .logo-carousel {
             --logo-width: 100px;
             --logo-gap: 16px;
+          }
+          .logo-carousel-track {
+            animation: scrollLogosMobile 20s linear infinite;
           }
           .logo-carousel-item {
             height: 50px;
@@ -447,6 +462,11 @@
           .logo-carousel::after {
             width: 24px;
           }
+        }
+        /* Mobile animation - moves 1 set width */
+        @keyframes scrollLogosMobile {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(calc(var(--set-width) * -1)); }
         }
       </style>
       
@@ -489,6 +509,42 @@
             </div>
           </div>
           <!-- Duplicate set for seamless infinite scroll -->
+          <div class="logo-carousel-set">
+            <div class="logo-carousel-item">
+              <img src="assets/images/schools/insead.png" alt="INSEAD" loading="lazy">
+            </div>
+            <div class="logo-carousel-item">
+              <img src="assets/images/schools/lbs.png" alt="London Business School" loading="lazy">
+            </div>
+            <div class="logo-carousel-item">
+              <img src="assets/images/schools/tuck.png" alt="Tuck School of Business" loading="lazy">
+            </div>
+            <div class="logo-carousel-item">
+              <img src="assets/images/schools/darden.png" alt="UVA Darden" loading="lazy">
+            </div>
+            <div class="logo-carousel-item">
+              <img src="assets/images/schools/hkust.png" alt="HKUST" loading="lazy">
+            </div>
+            <div class="logo-carousel-item">
+              <img src="assets/images/schools/ie.png" alt="IE Business School" loading="lazy">
+            </div>
+            <div class="logo-carousel-item">
+              <img src="assets/images/schools/esade.png" alt="ESADE" loading="lazy">
+            </div>
+            <div class="logo-carousel-item">
+              <img src="assets/images/schools/manchester.png" alt="Alliance Manchester" loading="lazy">
+            </div>
+            <div class="logo-carousel-item">
+              <img src="assets/images/schools/oxford.png" alt="Oxford Saïd" loading="lazy">
+            </div>
+            <div class="logo-carousel-item">
+              <img src="assets/images/schools/cambridge.png" alt="Cambridge Judge" loading="lazy">
+            </div>
+            <div class="logo-carousel-item">
+              <img src="assets/images/schools/iese.png" alt="IESE Business School" loading="lazy">
+            </div>
+          </div>
+          <!-- Third set for mobile seamless scroll -->
           <div class="logo-carousel-set">
             <div class="logo-carousel-item">
               <img src="assets/images/schools/insead.png" alt="INSEAD" loading="lazy">

@@ -2815,14 +2815,39 @@ img {
     overflow-x: hidden;
   }
   
-  /* Prevent any element from causing horizontal scroll */
-  section, div, article, aside, header, footer, main {
+  /* Prevent horizontal scroll but allow normal vertical scrolling */
+  section, article, aside, header, footer, main {
     max-width: 100vw;
-    overflow-x: hidden;
+    overflow: visible;
   }
   
   /* Keep navbar visible for mobile menu */
   .navbar {
+    overflow: visible;
+  }
+  
+  /* Remove any internal scrolling on content sections */
+  .section,
+  .hero,
+  .stats-section,
+  .cta-section,
+  .page-header,
+  .process-grid,
+  .services-grid,
+  .team-grid,
+  .testimonials-grid,
+  .testimonial-grid,
+  .blog-grid,
+  .faq-container,
+  .contact-grid {
+    overflow: visible !important;
+    max-height: none !important;
+    height: auto !important;
+  }
+  
+  /* Ensure grids don't create scroll containers */
+  [class*="-grid"],
+  [class*="-container"] {
     overflow: visible;
   }
   
@@ -3598,6 +3623,62 @@ img {
   
   .mobile-hide {
     display: none !important;
+  }
+  
+  /* ==========================================================================
+     PREVENT INTERNAL SCROLLING ON MOBILE
+     ========================================================================== */
+  
+  /* Remove overflow hidden from cards and containers that might trap scrolling */
+  .card,
+  .service-card,
+  .testimonial-card,
+  .team-card,
+  .blog-card,
+  .faq-item,
+  .contact-item,
+  .stat-item,
+  .process-step {
+    overflow: visible !important;
+  }
+  
+  /* Ensure all content sections flow naturally */
+  .bg-off-white,
+  .bg-white,
+  [class*="section"] {
+    overflow: visible !important;
+    max-height: none !important;
+  }
+  
+  /* Fix hero section */
+  .hero,
+  .hero-content,
+  .hero-decoration {
+    overflow: visible !important;
+  }
+  
+  /* Fix stats section */
+  .stats-section,
+  .stats-grid {
+    overflow: visible !important;
+  }
+  
+  /* Fix CTA section */
+  .cta-section,
+  .cta-content {
+    overflow: visible !important;
+  }
+  
+  /* Ensure body handles all scrolling */
+  html {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  
+  body {
+    overflow-x: hidden;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
   }
 }
 

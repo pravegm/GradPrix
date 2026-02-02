@@ -37,10 +37,20 @@ function doPost(e) {
     logToSheet(data);
     
     // Send notification email to team
-    sendTeamNotification(data);
+    try {
+      sendTeamNotification(data);
+    } catch (emailError) {
+      console.error('Error sending team notification:', emailError);
+      // Continue even if team email fails
+    }
     
     // Send confirmation email to the user
-    sendUserConfirmation(data);
+    try {
+      sendUserConfirmation(data);
+    } catch (emailError) {
+      console.error('Error sending user confirmation:', emailError);
+      // Continue even if user email fails
+    }
     
     // Return success response
     return ContentService
@@ -262,16 +272,32 @@ Submitted: ${formatDate(data.submittedAt)}
   `;
   
   // Send email to all recipients
-  GmailApp.sendEmail(
-    RECIPIENTS.join(','),
-    subject,
-    plainBody,
-    {
-      name: SENDER_NAME,
-      htmlBody: htmlBody,
-      replyTo: data.email
-    }
-  );
+  try {
+    const recipients = RECIPIENTS.join(',');
+    console.log('Attempting to send team notification to:', recipients);
+    console.log('Subject:', subject);
+    
+    GmailApp.sendEmail(
+      recipients,
+      subject,
+      plainBody,
+      {
+        name: SENDER_NAME,
+        htmlBody: htmlBody,
+        replyTo: data.email
+      }
+    );
+    console.log('Team notification email sent successfully to:', recipients);
+    
+    // Verify by checking sent folder
+    const sentThreads = GmailApp.search('in:sent subject:"' + subject.substring(0, 30) + '"', 0, 1);
+    console.log('Found sent emails:', sentThreads.length);
+    
+  } catch (error) {
+    console.error('Failed to send team notification email:', error);
+    console.error('Error details:', error.toString());
+    throw error; // Re-throw so it can be caught by doPost
+  }
 }
 
 /**
@@ -394,15 +420,30 @@ Instagram: https://www.instagram.com/gradprix.official/
 © 2026 GradPrix. All rights reserved.
   `;
   
-  GmailApp.sendEmail(
-    data.email,
-    subject,
-    plainBody,
-    {
-      name: SENDER_NAME,
-      htmlBody: htmlBody
-    }
-  );
+  try {
+    console.log('Attempting to send user confirmation to:', data.email);
+    console.log('Subject:', subject);
+    
+    GmailApp.sendEmail(
+      data.email,
+      subject,
+      plainBody,
+      {
+        name: SENDER_NAME,
+        htmlBody: htmlBody
+      }
+    );
+    console.log('User confirmation email sent successfully to:', data.email);
+    
+    // Verify by checking sent folder
+    const sentThreads = GmailApp.search('in:sent to:' + data.email + ' subject:"Thank you for contacting"', 0, 1);
+    console.log('Found sent confirmation emails:', sentThreads.length);
+    
+  } catch (error) {
+    console.error('Failed to send user confirmation email:', error);
+    console.error('Error details:', error.toString());
+    throw error; // Re-throw so it can be caught by doPost
+  }
 }
 
 /**

@@ -1,6 +1,6 @@
 # GradPrix Website
 
-Premium MBA admissions consulting website for **GradPrix** - helping candidates secure admission to Tier 1 and Tier 2 MBA programs worldwide.
+Premium MBA admissions consulting website for **GradPrix** - helping candidates secure admission to Tier 1 and Tier 2 MBA programs worldwide
 
 🌐 **Live Site:** [www.gradprix.com](https://www.gradprix.com)
 

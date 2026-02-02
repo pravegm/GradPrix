@@ -164,7 +164,7 @@ function setupSheetHeaders() {
  * Sends notification email to the GradPrix team
  */
 function sendTeamNotification(data) {
-  const subject = `🎓 New Consultation Request: ${data.firstName} ${data.lastName}`;
+  const subject = `New Consultation Request: ${data.firstName} ${data.lastName}`;
   
   const htmlBody = `
     <!DOCTYPE html>
@@ -198,8 +198,8 @@ function sendTeamNotification(data) {
             <div class="field-label">Contact Information</div>
             <div class="field-value">
               <strong>${escapeHtml(data.firstName)} ${escapeHtml(data.lastName)}</strong><br>
-              📧 <a href="mailto:${escapeHtml(data.email)}">${escapeHtml(data.email)}</a><br>
-              📱 ${escapeHtml(data.phone)}
+              Email: <a href="mailto:${escapeHtml(data.email)}">${escapeHtml(data.email)}</a><br>
+              Phone: ${escapeHtml(data.phone)}
             </div>
           </div>
           
@@ -233,7 +233,7 @@ function sendTeamNotification(data) {
           </div>
           
           <div class="footer">
-            <div class="timestamp">📅 Submitted: ${formatDate(data.submittedAt)}</div>
+            <div class="timestamp">Submitted: ${formatDate(data.submittedAt)}</div>
           </div>
         </div>
       </div>
@@ -319,7 +319,7 @@ function sendUserConfirmation(data) {
           <p>Thank you for reaching out to GradPrix. We've received your consultation request and one of our MBA admissions experts will be in touch within <strong>24 hours</strong>.</p>
           
           <div class="summary">
-            <h3>📋 Your Request Summary</h3>
+            <h3>Your Request Summary</h3>
             <div class="summary-item">
               <div class="summary-label">Target Schools</div>
               <div class="summary-value">${escapeHtml(data.targetSchools)}</div>
@@ -337,9 +337,9 @@ function sendUserConfirmation(data) {
           <div class="next-steps">
             <h3>What Happens Next?</h3>
             <ul>
-              <li>📞 A team member will reach out to schedule your <strong>free consultation</strong></li>
-              <li>💬 We'll discuss your background, goals, and target schools</li>
-              <li>📝 You'll receive personalized recommendations for your MBA journey</li>
+              <li>A team member will reach out to schedule your <strong>free consultation</strong></li>
+              <li>We'll discuss your background, goals, and target schools</li>
+              <li>You'll receive personalized recommendations for your MBA journey</li>
             </ul>
           </div>
           

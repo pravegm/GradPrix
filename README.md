@@ -41,6 +41,7 @@ GradPrix/
 │   ├── lbs-mba-application-guide.html
 │   ├── hec-paris-mba-application-guide.html
 │   ├── iese-mba-application-guide.html
+│   ├── kellogg-mba-application-guide.html
 │   ├── european-vs-usa-mba.html
 │   ├── too-young-for-mba-myth.html
 │   ├── mba-leadership-evaluation.html
@@ -95,21 +96,22 @@ GradPrix/
 
 ## Blog Articles
 
-Ten comprehensive, SEO + AI-optimized blog posts:
+Eleven comprehensive, SEO + AI-optimized blog posts:
 
 **School-Specific Guides:**
 1. **INSEAD MBA Application Guide** (Nov 2025) - Complete guide from INSEAD alumni
 2. **LBS MBA Application Guide** (Dec 2025) - London Business School strategies
 3. **HEC Paris MBA Application Guide** (Dec 2025) - France's top MBA program
 4. **IESE MBA Application Guide** (Oct 2025) - Barcelona MBA insights
+5. **Kellogg MBA Application Guide** (Nov 2025) - Northwestern's collaborative MBA
 
 **Application Strategy:**
-5. **European vs. USA MBA** (Jan 2026) - Complete guide to choosing your path
-6. **Am I Too Young for an MBA?** (Jan 2026) - Debunking the experience myth
-7. **How Top MBAs Evaluate Leadership** (Dec 2025) - Beyond titles and team size
-8. **Extracurriculars in MBA Applications** (Dec 2025) - Quality over quantity
-9. **International Experience Myths** (Nov 2025) - Busting common misconceptions
-10. **MBA for All Backgrounds** (Sep 2025) - Why diverse backgrounds are valued
+6. **European vs. USA MBA** (Jan 2026) - Complete guide to choosing your path
+7. **Am I Too Young for an MBA?** (Jan 2026) - Debunking the experience myth
+8. **How Top MBAs Evaluate Leadership** (Dec 2025) - Beyond titles and team size
+9. **Extracurriculars in MBA Applications** (Dec 2025) - Quality over quantity
+10. **International Experience Myths** (Nov 2025) - Busting common misconceptions
+11. **MBA for All Backgrounds** (Sep 2025) - Why diverse backgrounds are valued
 
 Each blog includes:
 - Schema.org Article markup

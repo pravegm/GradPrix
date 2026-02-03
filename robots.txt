@@ -8,10 +8,16 @@ Allow: /
 # Sitemap location
 Sitemap: https://www.gradprix.com/sitemap.xml
 
+# LLMs.txt for AI systems
+# https://www.gradprix.com/llms.txt
+
 # Crawl-delay for politeness (optional, respected by some bots)
 Crawl-delay: 1
 
-# Specific directives for major search engines
+# ============================================
+# TRADITIONAL SEARCH ENGINE CRAWLERS
+# ============================================
+
 User-agent: Googlebot
 Allow: /
 
@@ -29,6 +35,75 @@ Allow: /
 
 User-agent: Yandex
 Allow: /
+
+# ============================================
+# AI / LLM CRAWLERS - EXPLICITLY ALLOWED
+# ============================================
+
+# OpenAI's ChatGPT crawler
+User-agent: GPTBot
+Allow: /
+
+# OpenAI's ChatGPT user browsing
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic's Claude crawler
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Google's AI crawlers (Bard/Gemini)
+User-agent: Google-Extended
+Allow: /
+
+# Perplexity AI crawler
+User-agent: PerplexityBot
+Allow: /
+
+# Cohere AI crawler
+User-agent: cohere-ai
+Allow: /
+
+# Meta AI crawler
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Microsoft/Bing AI (Copilot)
+User-agent: Bingbot
+Allow: /
+
+# Apple's AI crawler (Apple Intelligence)
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Common Crawl (used by many AI training datasets)
+User-agent: CCBot
+Allow: /
+
+# You.com AI
+User-agent: YouBot
+Allow: /
+
+# Amazon AI (Alexa)
+User-agent: ia_archiver
+Allow: /
+
+# Neeva AI (now part of Snowflake)
+User-agent: NeevaBot
+Allow: /
+
+# ============================================
+# BLOCKED DIRECTORIES
+# ============================================
 
 # Block access to admin/internal directories if any exist
 Disallow: /google-apps-script/

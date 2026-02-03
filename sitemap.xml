@@ -4,6 +4,14 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   
+  <!-- AI/LLM Information File -->
+  <url>
+    <loc>https://www.gradprix.com/llms.txt</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
   <!-- Main Pages -->
   <url>
     <loc>https://www.gradprix.com/</loc>

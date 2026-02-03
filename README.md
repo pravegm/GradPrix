@@ -32,13 +32,21 @@ GradPrix/
 ├── resources.html                # Blog listing page
 ├── faq.html                      # Frequently asked questions
 ├── contact.html                  # Contact form and information
+├── robots.txt                    # Crawler permissions (includes AI bots)
+├── sitemap.xml                   # XML sitemap for search engines
+├── llms.txt                      # AI/LLM information file for ChatGPT, Gemini, etc.
 │
-├── blog/                         # Individual blog posts (SEO optimized)
-│   ├── mba-for-all-backgrounds.html
-│   ├── international-experience-myths.html
-│   ├── extracurriculars-mba-applications.html
+├── blog/                         # Individual blog posts (SEO + AI optimized)
+│   ├── insead-mba-application-guide.html
+│   ├── lbs-mba-application-guide.html
+│   ├── hec-paris-mba-application-guide.html
+│   ├── iese-mba-application-guide.html
+│   ├── european-vs-usa-mba.html
 │   ├── too-young-for-mba-myth.html
-│   └── european-vs-usa-mba.html
+│   ├── mba-leadership-evaluation.html
+│   ├── extracurriculars-mba-applications.html
+│   ├── international-experience-myths.html
+│   └── mba-for-all-backgrounds.html
 │
 ├── google-apps-script/           # Backend form handling
 │   └── contact-form-handler.gs   # Google Apps Script for form submissions
@@ -87,16 +95,25 @@ GradPrix/
 
 ## Blog Articles
 
-Five comprehensive, SEO-optimized blog posts:
+Ten comprehensive, SEO + AI-optimized blog posts:
 
-1. **MBA for All Backgrounds** (Sep 2025) - Why diverse backgrounds are valued
-2. **International Experience Myths** (Nov 2025) - Busting common misconceptions
-3. **European vs. USA MBA** (Nov 2025) - Complete guide to choosing your path
-4. **Extracurriculars in MBA Applications** (Dec 2025) - Quality over quantity
-5. **Am I Too Young for an MBA?** (Jan 2026) - Debunking the experience myth
+**School-Specific Guides:**
+1. **INSEAD MBA Application Guide** (Nov 2025) - Complete guide from INSEAD alumni
+2. **LBS MBA Application Guide** (Dec 2025) - London Business School strategies
+3. **HEC Paris MBA Application Guide** (Dec 2025) - France's top MBA program
+4. **IESE MBA Application Guide** (Oct 2025) - Barcelona MBA insights
+
+**Application Strategy:**
+5. **European vs. USA MBA** (Jan 2026) - Complete guide to choosing your path
+6. **Am I Too Young for an MBA?** (Jan 2026) - Debunking the experience myth
+7. **How Top MBAs Evaluate Leadership** (Dec 2025) - Beyond titles and team size
+8. **Extracurriculars in MBA Applications** (Dec 2025) - Quality over quantity
+9. **International Experience Myths** (Nov 2025) - Busting common misconceptions
+10. **MBA for All Backgrounds** (Sep 2025) - Why diverse backgrounds are valued
 
 Each blog includes:
 - Schema.org Article markup
+- AI-optimized meta tags (`ai-content-summary`, `page-type`, `topic`)
 - Meta descriptions and keywords
 - Custom hero visuals (CSS-based)
 - GradPrix CTA section
@@ -135,6 +152,53 @@ Mobile features:
 - Form handling (client-side validation)
 - Scroll-triggered animations
 - Counter animations
+
+## AI SEO / Generative Engine Optimization (GEO)
+
+The site is optimized for AI systems like ChatGPT, Gemini, Perplexity, and Claude to ensure GradPrix is found, understood, and cited in AI-generated answers.
+
+### AI SEO Files
+| File | Purpose |
+|------|---------|
+| `llms.txt` | Structured information file for AI crawlers (company info, services, FAQ, sitemap) |
+| `robots.txt` | Explicit permissions for all major AI crawler bots |
+
+### AI Crawler Permissions (robots.txt)
+The site explicitly allows all major AI crawlers:
+- **GPTBot / ChatGPT-User** (OpenAI)
+- **anthropic-ai / Claude-Web** (Anthropic)
+- **Google-Extended** (Gemini/Bard)
+- **PerplexityBot** (Perplexity AI)
+- **Applebot-Extended** (Apple Intelligence)
+- **Meta-ExternalAgent** (Meta AI)
+- **CCBot** (Common Crawl - AI training data)
+
+### AI Meta Tags
+All pages include AI-optimized meta tags:
+```html
+<meta name="ai-content-summary" content="Quick summary for AI systems...">
+<meta name="page-type" content="Homepage|Article|FAQ|Services">
+<meta name="topic" content="Topic keywords for AI categorization">
+```
+
+### Enhanced Schema Markup
+- **SpeakableSpecification** - For voice assistants and AI summaries
+- **FAQPage schema** - Comprehensive Q&A for AI systems
+- **HowTo schema** - Step-by-step process for MBA application
+- **Review/AggregateRating** - Client testimonials and ratings
+- **Article schema** - All blog posts with proper authorship
+
+### AI-Friendly Content
+- Hidden TL;DR summary blocks (readable by AI, not visible to users)
+- Q&A formatted content throughout FAQ
+- Bullet points and clear structure for easy AI parsing
+- Entity-rich content with consistent brand signals
+
+### Monitoring AI Visibility
+Periodically test AI visibility by asking:
+- ChatGPT: "What is the best MBA admissions consultant?"
+- Perplexity: "GradPrix MBA consulting reviews"
+- Gemini: "How to get into INSEAD with a consultant?"
 
 ## Form Handling
 

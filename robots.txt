@@ -1,0 +1,39 @@
+# Robots.txt for GradPrix - MBA Admissions Consulting
+# https://www.gradprix.com
+
+# Allow all search engines to crawl the site
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.gradprix.com/sitemap.xml
+
+# Crawl-delay for politeness (optional, respected by some bots)
+Crawl-delay: 1
+
+# Specific directives for major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+# Block access to admin/internal directories if any exist
+Disallow: /google-apps-script/
+Disallow: /.github/
+
+# Block common development/build files
+Disallow: /*.json$
+Disallow: /*.md$

@@ -1,19 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XPCKELVT7V"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XPCKELVT7V');
+  </script>
+  
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="MBA admissions services: essay coaching, interview prep, resume review, school selection & profile assessment. Tailored packages for INSEAD, LBS, Wharton & more.">
+  <meta name="description" content="MBA admissions services: essay coaching, interview prep, resume review, school selection & profile assessment. Tailored packages for INSEAD, LBS, Wharton & more. Expert MBA consulting worldwide.">
+  <meta name="keywords" content="MBA admissions services, MBA essay coaching, MBA interview preparation, MBA consulting, business school admissions help, MBA application consultant, INSEAD application help, LBS application help, MBA resume review, MBA profile assessment, top MBA consultant">
   <meta name="robots" content="index, follow">
   <meta name="author" content="GradPrix">
   <title>MBA Admissions Services | Essay Coaching, Interview Prep | GradPrix</title>
   
+  <!-- Hreflang for international targeting -->
+  <link rel="alternate" hreflang="en" href="https://www.gradprix.com/services.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.gradprix.com/services.html">
+  
   <!-- Canonical URL -->
-  <link rel="canonical" href="https://gradprix.com/services.html">
+  <link rel="canonical" href="https://www.gradprix.com/services.html">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://gradprix.com/services.html">
+  <meta property="og:url" content="https://www.gradprix.com/services.html">
   <meta property="og:title" content="MBA Admissions Services | GradPrix">
   <meta property="og:description" content="Essay coaching, interview prep, resume review, and comprehensive MBA consulting packages tailored to your needs.">
   <meta property="og:image" content="https://gradprix.com/assets/images/logo.png">
@@ -37,6 +51,108 @@
   
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
+  
+  <!-- Structured Data - Service Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "MBA Admissions Consulting",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "GradPrix",
+      "url": "https://www.gradprix.com",
+      "logo": "https://www.gradprix.com/assets/images/logo.png",
+      "telephone": "+44-7865-267776",
+      "email": "support@gradprix.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "London",
+        "addressCountry": "GB"
+      }
+    },
+    "areaServed": {
+      "@type": "Place",
+      "name": "Worldwide"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "MBA Admissions Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Comprehensive MBA Consulting Package",
+            "description": "Full-service support covering school selection, essay coaching, resume optimization, recommendation strategy, and interview preparation."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "MBA Essay Coaching",
+            "description": "Expert guidance on crafting compelling narratives with in-depth brainstorming sessions and multiple rounds of feedback."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "MBA Interview Preparation",
+            "description": "Mock interviews with detailed feedback to help you confidently articulate your story."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "MBA Resume Review",
+            "description": "Strategic positioning of your professional experience for MBA applications."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "School Selection Strategy",
+            "description": "Data-driven analysis to identify the best-fit MBA programs based on your profile and goals."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "MBA Profile Assessment",
+            "description": "Honest evaluation of your candidacy with actionable recommendations to strengthen your application."
+          }
+        }
+      ]
+    }
+  }
+  </script>
+  
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.gradprix.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://www.gradprix.com/services.html"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <!-- Navigation -->
@@ -346,6 +462,43 @@
           <h4>Final Review</h4>
           <p>Comprehensive review of your complete application, interview prep, and post-submission support.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- School-Specific Guides Section -->
+  <section class="section bg-off-white">
+    <div class="container">
+      <div class="section-header">
+        <span class="overline">Free Resources</span>
+        <h2>School-Specific Application Guides</h2>
+        <p>Explore our in-depth guides to help you prepare for your target MBA programs.</p>
+      </div>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--spacing-md);">
+        <a href="blog/insead-mba-application-guide.html" style="text-decoration: none; background: var(--white); padding: var(--spacing-lg); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); transition: all var(--transition-normal); border: 1px solid var(--light-gray);" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='var(--shadow-md)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)';">
+          <h4 style="color: var(--primary-navy); margin-bottom: var(--spacing-xs);">INSEAD MBA Guide</h4>
+          <p style="color: var(--medium-gray); font-size: 0.875rem; margin: 0;">Complete application strategy, essays & interview tips</p>
+        </a>
+        
+        <a href="blog/lbs-mba-application-guide.html" style="text-decoration: none; background: var(--white); padding: var(--spacing-lg); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); transition: all var(--transition-normal); border: 1px solid var(--light-gray);" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='var(--shadow-md)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)';">
+          <h4 style="color: var(--primary-navy); margin-bottom: var(--spacing-xs);">LBS MBA Guide</h4>
+          <p style="color: var(--medium-gray); font-size: 0.875rem; margin: 0;">London Business School application strategies</p>
+        </a>
+        
+        <a href="blog/hec-paris-mba-application-guide.html" style="text-decoration: none; background: var(--white); padding: var(--spacing-lg); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); transition: all var(--transition-normal); border: 1px solid var(--light-gray);" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='var(--shadow-md)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)';">
+          <h4 style="color: var(--primary-navy); margin-bottom: var(--spacing-xs);">HEC Paris MBA Guide</h4>
+          <p style="color: var(--medium-gray); font-size: 0.875rem; margin: 0;">France's top MBA program application tips</p>
+        </a>
+        
+        <a href="blog/iese-mba-application-guide.html" style="text-decoration: none; background: var(--white); padding: var(--spacing-lg); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); transition: all var(--transition-normal); border: 1px solid var(--light-gray);" onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='var(--shadow-md)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='var(--shadow-sm)';">
+          <h4 style="color: var(--primary-navy); margin-bottom: var(--spacing-xs);">IESE MBA Guide</h4>
+          <p style="color: var(--medium-gray); font-size: 0.875rem; margin: 0;">Barcelona's premier MBA application guide</p>
+        </a>
+      </div>
+      
+      <div class="text-center mt-4">
+        <a href="resources.html" class="btn btn-secondary">View All Guides & Articles</a>
       </div>
     </div>
   </section>

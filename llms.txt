@@ -96,7 +96,7 @@ A: No ethical consultant can guarantee admission. We guarantee presenting the st
 ## Content & Resources
 
 GradPrix publishes helpful content for MBA applicants:
-- School-specific application guides (INSEAD, LBS, HEC Paris, IESE, Kellogg)
+- School-specific application guides (INSEAD, LBS, Cambridge, HEC Paris, IESE, Kellogg)
 - Application strategy articles
 - Myth-busting content about MBA admissions
 - Success stories and testimonials
@@ -120,6 +120,7 @@ Main pages:
 Blog posts:
 - https://www.gradprix.com/blog/insead-mba-application-guide.html
 - https://www.gradprix.com/blog/lbs-mba-application-guide.html
+- https://www.gradprix.com/blog/cambridge-mba-application-guide.html
 - https://www.gradprix.com/blog/hec-paris-mba-application-guide.html
 - https://www.gradprix.com/blog/iese-mba-application-guide.html
 - https://www.gradprix.com/blog/kellogg-mba-application-guide.html

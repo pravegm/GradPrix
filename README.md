@@ -39,6 +39,7 @@ GradPrix/
 ├── blog/                         # Individual blog posts (SEO + AI optimized)
 │   ├── insead-mba-application-guide.html
 │   ├── lbs-mba-application-guide.html
+│   ├── cambridge-mba-application-guide.html
 │   ├── hec-paris-mba-application-guide.html
 │   ├── iese-mba-application-guide.html
 │   ├── kellogg-mba-application-guide.html
@@ -96,22 +97,23 @@ GradPrix/
 
 ## Blog Articles
 
-Eleven comprehensive, SEO + AI-optimized blog posts:
+Twelve comprehensive, SEO + AI-optimized blog posts:
 
 **School-Specific Guides:**
 1. **INSEAD MBA Application Guide** (Nov 2025) - Complete guide from INSEAD alumni
 2. **LBS MBA Application Guide** (Dec 2025) - London Business School strategies
-3. **HEC Paris MBA Application Guide** (Dec 2025) - France's top MBA program
-4. **IESE MBA Application Guide** (Oct 2025) - Barcelona MBA insights
-5. **Kellogg MBA Application Guide** (Nov 2025) - Northwestern's collaborative MBA
+3. **Cambridge MBA Application Guide** (Nov 2025) - Cambridge Judge Business School strategies
+4. **HEC Paris MBA Application Guide** (Dec 2025) - France's top MBA program
+5. **IESE MBA Application Guide** (Oct 2025) - Barcelona MBA insights
+6. **Kellogg MBA Application Guide** (Nov 2025) - Northwestern's collaborative MBA
 
 **Application Strategy:**
-6. **European vs. USA MBA** (Jan 2026) - Complete guide to choosing your path
-7. **Am I Too Young for an MBA?** (Jan 2026) - Debunking the experience myth
-8. **How Top MBAs Evaluate Leadership** (Dec 2025) - Beyond titles and team size
-9. **Extracurriculars in MBA Applications** (Dec 2025) - Quality over quantity
-10. **International Experience Myths** (Nov 2025) - Busting common misconceptions
-11. **MBA for All Backgrounds** (Sep 2025) - Why diverse backgrounds are valued
+7. **European vs. USA MBA** (Jan 2026) - Complete guide to choosing your path
+8. **Am I Too Young for an MBA?** (Jan 2026) - Debunking the experience myth
+9. **How Top MBAs Evaluate Leadership** (Dec 2025) - Beyond titles and team size
+10. **Extracurriculars in MBA Applications** (Dec 2025) - Quality over quantity
+11. **International Experience Myths** (Nov 2025) - Busting common misconceptions
+12. **MBA for All Backgrounds** (Sep 2025) - Why diverse backgrounds are valued
 
 Each blog includes:
 - Schema.org Article markup

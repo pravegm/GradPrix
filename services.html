@@ -42,6 +42,11 @@
   <meta name="twitter:title" content="MBA Admissions Services | GradPrix">
   <meta name="twitter:description" content="Essay coaching, interview prep, resume review, and comprehensive MBA consulting packages.">
   
+  <!-- DNS Prefetch for Third-Party Resources -->
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  
   <!-- Preload critical resources -->
   <link rel="preload" href="assets/images/logo.png" as="image">
   <link rel="preload" href="assets/css/styles.css" as="style">
@@ -208,6 +213,111 @@
     ]
   }
   </script>
+  
+  <!-- SpeakableSpecification for AI/Voice Assistants -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "GradPrix MBA Admissions Services",
+    "description": "Comprehensive MBA admissions consulting services",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".page-header", ".section-header", ".service-card"]
+    }
+  }
+  </script>
+  
+  <!-- FAQ Schema for Services Page -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What MBA admissions services does GradPrix offer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GradPrix offers comprehensive MBA consulting packages, essay coaching, interview preparation, resume review, school selection strategy, profile assessment, and recommendation letter strategy. We provide personalized guidance from INSEAD alumni consultants."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much do GradPrix MBA consulting services cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our pricing is customized based on services needed and schools targeted. We offer flexible payment options and provide detailed pricing during your free 30-minute consultation. Contact support@gradprix.com for a personalized quote."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is included in the comprehensive MBA consulting package?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our comprehensive package includes school selection strategy, essay coaching for all schools, resume optimization, recommendation letter strategy, application form review, interview preparation, and scholarship negotiation support. It covers your entire MBA application journey."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer essay coaching as a standalone service?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, we offer essay coaching as a standalone service. This includes in-depth brainstorming sessions, multiple rounds of detailed feedback, school-specific strategy, and final polish. We can work on essays for individual schools or multiple applications."
+        }
+      }
+    ]
+  }
+  </script>
+  
+  <!-- ItemList Schema for Services -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "GradPrix MBA Admissions Services",
+    "description": "Complete list of MBA admissions consulting services offered by GradPrix",
+    "numberOfItems": 6,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Comprehensive MBA Consulting Package",
+        "description": "Full-service support covering school selection, essay coaching, resume optimization, recommendation strategy, and interview preparation"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Essay Coaching",
+        "description": "Expert guidance on crafting compelling narratives with in-depth brainstorming sessions and multiple rounds of feedback"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Interview Preparation",
+        "description": "Mock interviews with detailed feedback to help you confidently articulate your story"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Resume Review",
+        "description": "Strategic positioning of your professional experience for MBA applications"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "School Selection Strategy",
+        "description": "Data-driven analysis to identify the best-fit MBA programs based on your profile and goals"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "name": "Profile Assessment",
+        "description": "Honest evaluation of your candidacy with actionable recommendations to strengthen your application"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <!-- Navigation -->
@@ -240,6 +350,28 @@
       </div>
     </div>
   </nav>
+
+  <!-- Main Content Area -->
+  <main id="main-content" role="main">
+
+  <!-- AI-Optimized Summary Block (hidden visually, readable by AI) -->
+  <section class="ai-summary" aria-hidden="false" style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden;">
+    <div itemscope itemtype="https://schema.org/Service">
+      <h2>GradPrix MBA Admissions Services Overview</h2>
+      <p><strong>What services does GradPrix offer?</strong></p>
+      <ul>
+        <li><strong>Tailored Consulting Packages:</strong> Customized end-to-end support based on your specific needs, timeline, and budget. Includes school selection, essay coaching, resume optimization, recommendation strategy, interview preparation, and application form review.</li>
+        <li><strong>Essay Coaching:</strong> In-depth brainstorming sessions, multiple rounds of detailed feedback, school-specific strategy, and final polish/proofreading.</li>
+        <li><strong>Interview Preparation:</strong> School-specific mock interviews, behavioral question preparation, video review and feedback, follow-up strategy coaching.</li>
+        <li><strong>Resume Review:</strong> Complete resume restructuring, achievement quantification, MBA-specific formatting with two rounds of revisions.</li>
+        <li><strong>School Selection Strategy:</strong> Comprehensive profile analysis, school fit assessment, admissions probability analysis, customized school list.</li>
+        <li><strong>Profile Assessment:</strong> Comprehensive profile review, strengths/weaknesses analysis, competitive positioning, improvement recommendations.</li>
+        <li><strong>Recommendation Strategy:</strong> Recommender selection strategy, talking points development, story alignment coaching.</li>
+      </ul>
+      <p><strong>How much does it cost?</strong> Pricing varies based on services needed and schools targeted. Free 30-minute initial consultation available.</p>
+      <p><strong>Contact:</strong> support@gradprix.com | +44-7865-267776 | https://www.gradprix.com/contact.html</p>
+    </div>
+  </section>
 
   <!-- Page Header -->
   <section class="page-header">
@@ -571,6 +703,8 @@
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- Footer -->
   <footer class="footer">

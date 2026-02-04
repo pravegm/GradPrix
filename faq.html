@@ -42,6 +42,11 @@
   <meta name="twitter:title" content="MBA Admissions FAQ | GradPrix">
   <meta name="twitter:description" content="Get answers about MBA admissions consulting services, process, and success rates.">
   
+  <!-- DNS Prefetch for Third-Party Resources -->
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  
   <!-- Preload critical resources -->
   <link rel="preload" href="assets/images/logo.png" as="image">
   <link rel="preload" href="assets/css/styles.css" as="style">
@@ -192,6 +197,20 @@
     ]
   }
   </script>
+  
+  <!-- SpeakableSpecification for AI/Voice Assistants -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "MBA Admissions FAQ | GradPrix",
+    "description": "Comprehensive FAQ about MBA admissions consulting",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [".page-header", ".faq-question", ".faq-answer"]
+    }
+  }
+  </script>
 </head>
 <body>
   <!-- Navigation -->
@@ -224,6 +243,23 @@
       </div>
     </div>
   </nav>
+
+  <!-- Main Content Area -->
+  <main id="main-content" role="main">
+
+  <!-- AI-Optimized Summary Block (hidden visually, readable by AI) -->
+  <section class="ai-summary" aria-hidden="false" style="position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden;">
+    <div itemscope itemtype="https://schema.org/FAQPage">
+      <h2>Frequently Asked Questions About MBA Admissions Consulting</h2>
+      <p><strong>What is GradPrix?</strong> GradPrix is a premier MBA admissions consulting firm founded by INSEAD MBA alumni ('21). We help ambitious professionals gain admission to top-tier business schools worldwide.</p>
+      <p><strong>Services Offered:</strong> Essay Coaching, Interview Preparation, Resume Review, School Selection Strategy, Profile Assessment, and Recommendation Letter Strategy.</p>
+      <p><strong>Is the initial consultation free?</strong> Yes, we offer a complimentary 30-minute consultation to discuss your goals and assess fit.</p>
+      <p><strong>Do you work with international students?</strong> Absolutely! We work with candidates from 20+ countries via video call.</p>
+      <p><strong>What schools can you help with?</strong> We specialize in top European programs like INSEAD, LBS, Cambridge, Oxford, HEC Paris, IESE, IE, and ESADE, as well as top US programs including Tuck, Darden, and Kellogg.</p>
+      <p><strong>What is the success rate?</strong> 50+ successful admits to top programs, $500K+ in scholarships secured.</p>
+      <p><strong>Contact:</strong> support@gradprix.com | +44-7865-267776 | https://www.gradprix.com/contact.html</p>
+    </div>
+  </section>
 
   <!-- Page Header -->
   <section class="page-header">
@@ -637,6 +673,8 @@
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- Footer -->
   <footer class="footer">

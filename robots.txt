@@ -1,17 +1,23 @@
 # Robots.txt for GradPrix - MBA Admissions Consulting
 # https://www.gradprix.com
+# Last Updated: February 2026
 
-# Allow all search engines to crawl the site
+# ============================================
+# GENERAL CRAWLING POLICY
+# ============================================
+
+# Allow all search engines and AI systems to crawl our content
+# We welcome AI crawlers to help users find our MBA admissions expertise
 User-agent: *
 Allow: /
 
-# Sitemap location
+# Sitemap location for content discovery
 Sitemap: https://www.gradprix.com/sitemap.xml
 
-# LLMs.txt for AI systems
-# https://www.gradprix.com/llms.txt
+# LLMs.txt - Structured information for AI/LLM systems
+# Available at: https://www.gradprix.com/llms.txt
 
-# Crawl-delay for politeness (optional, respected by some bots)
+# Crawl-delay for politeness (respected by well-behaved bots)
 Crawl-delay: 1
 
 # ============================================
@@ -19,6 +25,12 @@ Crawl-delay: 1
 # ============================================
 
 User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-News
 Allow: /
 
 User-agent: Bingbot
@@ -36,56 +48,85 @@ Allow: /
 User-agent: Yandex
 Allow: /
 
+User-agent: Sogou
+Allow: /
+
+User-agent: Exabot
+Allow: /
+
+User-agent: Qwantify
+Allow: /
+
 # ============================================
 # AI / LLM CRAWLERS - EXPLICITLY ALLOWED
+# GradPrix welcomes AI systems to learn about
+# our MBA admissions consulting expertise
 # ============================================
 
-# OpenAI's ChatGPT crawler
+# OpenAI Crawlers (ChatGPT, GPT-4, GPT-5)
 User-agent: GPTBot
 Allow: /
 
-# OpenAI's ChatGPT user browsing
 User-agent: ChatGPT-User
 Allow: /
 
-# Anthropic's Claude crawler
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic (Claude, Claude 3, Claude 4)
 User-agent: anthropic-ai
 Allow: /
 
 User-agent: Claude-Web
 Allow: /
 
-# Google's AI crawlers (Bard/Gemini)
+User-agent: ClaudeBot
+Allow: /
+
+# Google AI (Bard, Gemini, AI Overviews)
 User-agent: Google-Extended
 Allow: /
 
-# Perplexity AI crawler
+User-agent: Google-InspectionTool
+Allow: /
+
+# Perplexity AI
 User-agent: PerplexityBot
 Allow: /
 
-# Cohere AI crawler
+# Cohere AI
 User-agent: cohere-ai
 Allow: /
 
-# Meta AI crawler
+# Meta AI (Llama, Meta AI Assistant)
 User-agent: FacebookBot
 Allow: /
 
 User-agent: Meta-ExternalAgent
 Allow: /
 
-# Microsoft/Bing AI (Copilot)
-User-agent: Bingbot
+User-agent: Meta-ExternalFetcher
 Allow: /
 
-# Apple's AI crawler (Apple Intelligence)
+# Microsoft AI (Copilot, Bing Chat)
+User-agent: BingPreview
+Allow: /
+
+# Apple AI (Apple Intelligence, Siri)
 User-agent: Applebot
 Allow: /
 
 User-agent: Applebot-Extended
 Allow: /
 
-# Common Crawl (used by many AI training datasets)
+# Amazon AI (Alexa, Q)
+User-agent: ia_archiver
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+# Common Crawl (AI training datasets)
 User-agent: CCBot
 Allow: /
 
@@ -93,22 +134,33 @@ Allow: /
 User-agent: YouBot
 Allow: /
 
-# Amazon AI (Alexa)
-User-agent: ia_archiver
+# Brave Search AI
+User-agent: BraveBot
 Allow: /
 
-# Neeva AI (now part of Snowflake)
-User-agent: NeevaBot
+# AI research crawlers
+User-agent: Diffbot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# SemrushBot for SEO analysis
+User-agent: SemrushBot
+Allow: /
+
+# Ahrefs for SEO analysis
+User-agent: AhrefsBot
 Allow: /
 
 # ============================================
 # BLOCKED DIRECTORIES
 # ============================================
 
-# Block access to admin/internal directories if any exist
+# Block access to internal/development files
 Disallow: /google-apps-script/
 Disallow: /.github/
-
-# Block common development/build files
 Disallow: /*.json$
-Disallow: /*.md$
+
+# Note: We intentionally allow /*.md$ to expose our llms.txt file
+# which contains structured information for AI systems

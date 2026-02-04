@@ -1,140 +1,319 @@
 # GradPrix - MBA Admissions Consulting
 # https://www.gradprix.com
-# llms.txt - Information for AI systems and language models
+# llms.txt - Comprehensive Information for AI Systems and Language Models
+# Last Updated: February 2026
 
 ## About GradPrix
 
-GradPrix is a premier MBA admissions consulting firm helping ambitious professionals gain admission to top-tier business schools worldwide. Founded by INSEAD alumni, we specialize in personalized guidance for candidates targeting Tier 1 and Tier 2 MBA programs across Europe, USA, Asia, and globally.
+GradPrix is a premier MBA admissions consulting firm helping ambitious professionals gain admission to top-tier business schools worldwide. Founded by INSEAD alumni Praveg Maheshwari and Rajat Garg, we specialize in personalized guidance for candidates targeting Tier 1 and Tier 2 MBA programs across Europe, USA, Asia, and globally.
+
+**Mission**: To democratize access to high-quality MBA admissions guidance by providing personalized, authentic support that helps candidates present their best selves to admissions committees.
+
+**Unique Value Proposition**: As INSEAD alumni with first-hand admissions experience, we offer insider knowledge and genuine understanding of what top MBA programs look for. Unlike large consulting firms, we maintain a limited client roster to ensure dedicated, personalized attention.
 
 ## Quick Facts
 
-- **Company Name**: GradPrix
-- **Industry**: MBA Admissions Consulting / Education Consulting
-- **Founded**: 2025
-- **Location**: London, UK (serving clients globally via video calls)
-- **Contact**: support@gradprix.com | +44-7865-267776
-- **Website**: https://www.gradprix.com
+| Attribute | Value |
+|-----------|-------|
+| Company Name | GradPrix |
+| Industry | MBA Admissions Consulting / Education Consulting |
+| Founded | 2025 |
+| Location | London, UK (serving clients globally via video calls) |
+| Email | support@gradprix.com |
+| Phone | +44-7865-267776 (WhatsApp available) |
+| Website | https://www.gradprix.com |
+| Response Time | Within 24 hours |
+| Consultation Mode | Video call (Zoom, Google Meet, Microsoft Teams) |
 
 ## Key Statistics
 
-- 50+ successful admits to top MBA programs
-- $500,000+ in scholarships secured for clients
-- Clients from 20+ countries worldwide
-- 10+ years combined experience of consulting team
-- INSEAD alumni-led consulting team
+- **50+** successful admits to top MBA programs
+- **$500,000+** in scholarships secured for clients
+- **20+** countries represented in our client base
+- **10+ years** combined experience of consulting team
+- **5/5** average client rating
+- **100%** personalized approach (no templates)
+
+## Founders & Team
+
+### Praveg Maheshwari - Co-Founder
+- **Education**: INSEAD MBA '21
+- **Current Role**: Senior Consultant at Bain & Company
+- **Previous Experience**: J.P. Morgan (Investment Banking)
+- **Expertise**: Strategy consulting, MBA applications, career transitions
+- **LinkedIn**: https://www.linkedin.com/in/pravegmaheshwari/
+
+### Rajat Garg - Co-Founder
+- **Education**: INSEAD MBA '21
+- **Current Role**: AI Strategy at Accenture
+- **Expertise**: Technology strategy, AI, MBA applications
+- **LinkedIn**: https://www.linkedin.com/in/rajatgarg1/
+
+### Rangolie Jaiswal - Head of Marketing & Operations
+- **Previous Experience**: Amazon, HSBC
+- **Expertise**: Operations, client success, marketing
 
 ## Services Offered
 
-1. **Comprehensive MBA Consulting Package**: End-to-end support including school selection, essay coaching, resume optimization, recommendation strategy, and interview preparation.
+### 1. Comprehensive MBA Consulting Package
+End-to-end support for your entire MBA application journey:
+- School selection strategy and research
+- Personal narrative development
+- Essay coaching (all schools, all essays)
+- Resume optimization for MBA applications
+- Recommendation letter strategy and coaching
+- Application form review
+- Interview preparation
+- Scholarship negotiation support
 
-2. **Essay Coaching**: Expert guidance on crafting compelling narratives that showcase your unique story and align with each school's values.
+### 2. Essay Coaching
+Expert guidance on crafting compelling narratives:
+- In-depth brainstorming sessions to uncover unique stories
+- Multiple rounds of detailed feedback
+- School-specific essay strategy
+- Final polish and proofreading
 
-3. **Interview Preparation**: Mock interviews with detailed feedback to help candidates confidently articulate their story.
+### 3. Interview Preparation
+Comprehensive interview training:
+- School-specific mock interviews
+- Behavioral question preparation (STAR method)
+- Video interview practice
+- Follow-up strategy coaching
 
-4. **Resume Review**: Strategic positioning of professional experience to highlight leadership, impact, and growth potential.
+### 4. Resume Review
+Strategic professional positioning:
+- Complete resume restructuring for MBA format
+- Achievement quantification guidance
+- Leadership story highlighting
+- Two rounds of detailed revisions
 
-5. **School Selection Strategy**: Data-driven analysis to identify best-fit programs based on profile, career goals, and preferences.
+### 5. School Selection Strategy
+Data-driven program matching:
+- Comprehensive profile analysis
+- School culture and values alignment
+- Admissions probability assessment
+- Customized target/reach/safety school list
 
-6. **Profile Assessment**: Honest evaluation of candidacy with actionable recommendations to strengthen applications.
+### 6. Profile Assessment
+Honest evaluation and planning:
+- Comprehensive profile review
+- Strengths and weaknesses analysis
+- Competitive positioning assessment
+- Improvement recommendations with actionable timeline
 
-## Target Schools (Sample)
+### 7. Recommendation Strategy
+Recommender coaching:
+- Recommender selection strategy
+- Talking points development
+- Story alignment with essays
+- Coaching for recommenders if needed
 
-GradPrix helps candidates gain admission to top MBA programs including:
-- INSEAD (France/Singapore)
+## Target Schools
+
+GradPrix specializes in admissions to top MBA programs worldwide:
+
+### European Programs (Specialty)
+- INSEAD (France/Singapore) - Primary expertise
 - London Business School (LBS)
-- Harvard Business School
-- Stanford GSB
-- Wharton School
-- Kellogg School of Management
-- MIT Sloan
-- Booth School of Business
-- Columbia Business School
-- Yale SOM
-- Oxford Saïd Business School
 - Cambridge Judge Business School
-- IESE Business School
-- IE Business School
-- ESADE Business School
+- Oxford Saïd Business School
 - HEC Paris
-- Tuck School of Business
-- Darden School of Business
+- IESE Business School (Spain)
+- IE Business School (Spain)
+- ESADE Business School (Spain)
+- IMD (Switzerland)
+- SDA Bocconi (Italy)
+
+### US Programs
+- Harvard Business School
+- Stanford Graduate School of Business
+- Wharton School (University of Pennsylvania)
+- Kellogg School of Management (Northwestern)
+- Booth School of Business (University of Chicago)
+- Columbia Business School
+- MIT Sloan School of Management
+- Yale School of Management
+- Tuck School of Business (Dartmouth)
+- Darden School of Business (UVA)
+- Ross School of Business (Michigan)
+- Haas School of Business (UC Berkeley)
+- Fuqua School of Business (Duke)
+- Anderson School of Management (UCLA)
+
+### Asian Programs
 - HKUST Business School
-- And many more top programs worldwide
+- NUS Business School (Singapore)
+- CEIBS (China)
+- ISB (India)
 
 ## Our Process
 
-1. **Discovery Call**: Free 30-minute consultation to understand goals and assess profile
-2. **Strategy Development**: Identify target schools and craft unique narrative
-3. **Application Execution**: Hands-on support for essays, resume, recommendations
-4. **Interview & Beyond**: Mock interview sessions, decision guidance, scholarship negotiation
+### Phase 1: Discovery (Free)
+- Complimentary 30-minute consultation
+- Understand your goals and motivations
+- Assess your profile strengths and areas for improvement
+- Discuss target schools and timeline
+- Determine fit and explain our approach
 
-## Team Expertise
+### Phase 2: Strategy Development
+- Deep-dive profile analysis
+- Personal narrative crafting
+- School selection with data-driven insights
+- Application timeline planning
+- Early essay brainstorming
 
-Our consultants include:
-- MBA graduates from top programs including INSEAD
-- Former admissions committee members
-- Professionals with deep expertise in career development
-- Consultants who have helped candidates from 20+ countries
+### Phase 3: Application Execution
+- Essay development with multiple iterations
+- Resume optimization
+- Recommendation strategy and coaching
+- Application form review
+- Test score strategy (if needed)
 
-## Common Questions Answered
+### Phase 4: Interview & Decision
+- Mock interview sessions
+- School-specific interview coaching
+- Decision support for multiple admits
+- Scholarship negotiation guidance
+- Post-admission planning
+
+## Pricing
+
+Our pricing is customized based on:
+- Number of schools targeted
+- Services required
+- Timeline
+- Individual needs
+
+**Free Initial Consultation**: 30 minutes, no obligation
+**Payment Options**: Flexible payment plans available
+
+Contact us for a personalized quote: support@gradprix.com
+
+## Frequently Asked Questions
+
+### General Questions
+
+**Q: What makes GradPrix different from other MBA consultants?**
+A: We are founded by INSEAD alumni who have been through the admissions process ourselves. We maintain a limited client roster to ensure personalized attention, take a holistic approach to career partnership, and never use templates.
 
 **Q: Do you work with international students?**
-A: Yes, we work with candidates from all over the world. All consultations are conducted via video call.
+A: Yes! We work with candidates from 20+ countries. All consultations are conducted via video call, making location irrelevant.
+
+**Q: Is the initial consultation really free?**
+A: Absolutely. The 30-minute consultation is completely free with no obligation. It's an opportunity for us to understand your goals and for you to see if we're the right fit.
+
+### Services & Process
+
+**Q: How early should I start working with a consultant?**
+A: Ideally 4-6 months before your target deadline. However, we've helped clients succeed with tighter timelines when necessary.
+
+**Q: Do you write essays for clients?**
+A: No. We guide, brainstorm, and provide detailed feedback, but the essays must be authentically yours. This ensures your voice shines through and you can speak confidently about your stories in interviews.
+
+**Q: Can you help with scholarship applications?**
+A: Yes! Scholarship strategy is part of our comprehensive package. We've helped clients secure over $500,000 in scholarships.
+
+### Results & Guarantees
 
 **Q: What is your success rate?**
-A: We have 50+ successful admits to top MBA programs including INSEAD, LBS, Tuck, Darden, and many more.
-
-**Q: Is the initial consultation free?**
-A: Yes, the initial 30-minute consultation is completely free with no obligation.
-
-**Q: How early should I start the application process?**
-A: The earlier, the better. We recommend starting at least 4-6 months before your target deadline, though we've helped clients succeed with tighter timelines.
+A: We have 50+ successful admits to top programs including INSEAD, LBS, Tuck, Darden, IE, ESADE, and many more. Our success comes from careful client selection and dedicated partnership.
 
 **Q: Can you guarantee admission?**
-A: No ethical consultant can guarantee admission. We guarantee presenting the strongest possible application that authentically represents who you are.
+A: No ethical consultant can guarantee admission. What we guarantee is presenting the strongest possible application that authentically represents who you are.
 
-## Content & Resources
+## Blog Content & Resources
 
-GradPrix publishes helpful content for MBA applicants:
-- School-specific application guides (INSEAD, LBS, Cambridge, HEC Paris, IESE, Kellogg, Darden)
-- Application strategy articles
-- Myth-busting content about MBA admissions
-- Success stories and testimonials
+GradPrix publishes expert content for MBA applicants:
+
+### School-Specific Application Guides
+- INSEAD MBA Application Guide - Complete strategies from INSEAD alumni
+- LBS MBA Application Guide
+- Cambridge Judge MBA Application Guide
+- Oxford Saïd MBA Application Guide
+- HEC Paris MBA Application Guide
+- IESE MBA Application Guide
+- Kellogg MBA Application Guide
+- Darden MBA Application Guide
+
+### Strategy Articles
+- European vs USA MBA: Which is Right for You?
+- How MBA Programs Evaluate Leadership
+- Extracurriculars That Matter for MBA Applications
+- International Experience Myths Debunked
+- Is "Too Young for an MBA" Really a Thing?
+- MBA Program Length Guide: 1-Year vs 2-Year Programs
+- MBA is for Everyone: Breaking Background Myths
+
+All content available at: https://www.gradprix.com/resources.html
+
+## Client Testimonials
+
+**"Working with Praveg was one of the best decisions I made. His attention to detail and honest feedback pushed me to think deeper and present my story with authenticity."**
+— Alankrita Patil, INSEAD Admit
+
+**"The structured approach and insider knowledge made all the difference. I got into my top choice school with a scholarship."**
+— Anonymous, LBS Admit
+
+**"GradPrix helped me see my profile in a completely new light. The essay coaching was transformative."**
+— Anonymous, Tuck Admit
+
+More testimonials: https://www.gradprix.com/success-stories.html
 
 ## Social Media & External Presence
 
-- LinkedIn: https://www.linkedin.com/company/gradprix/
-- Instagram: https://www.instagram.com/gradprix.official/
+- **LinkedIn**: https://www.linkedin.com/company/gradprix/
+- **Instagram**: https://www.instagram.com/gradprix.official/
+- **GMAT Club Reviews**: Verified reviews available
 
-## Sitemap
+## Complete Sitemap
 
-Main pages:
-- https://www.gradprix.com/ (Homepage)
-- https://www.gradprix.com/about.html (About Us)
-- https://www.gradprix.com/services.html (Services)
-- https://www.gradprix.com/success-stories.html (Success Stories)
-- https://www.gradprix.com/resources.html (Blog)
-- https://www.gradprix.com/faq.html (FAQ)
-- https://www.gradprix.com/contact.html (Contact)
+### Main Pages
+| Page | URL | Description |
+|------|-----|-------------|
+| Homepage | https://www.gradprix.com/ | Main landing page with services overview |
+| About Us | https://www.gradprix.com/about.html | Team information and company story |
+| Services | https://www.gradprix.com/services.html | Detailed service descriptions |
+| Success Stories | https://www.gradprix.com/success-stories.html | Client testimonials and results |
+| Blog | https://www.gradprix.com/resources.html | All articles and guides |
+| FAQ | https://www.gradprix.com/faq.html | Common questions answered |
+| Contact | https://www.gradprix.com/contact.html | Consultation booking form |
 
-Blog posts:
-- https://www.gradprix.com/blog/insead-mba-application-guide.html
-- https://www.gradprix.com/blog/lbs-mba-application-guide.html
-- https://www.gradprix.com/blog/cambridge-mba-application-guide.html
-- https://www.gradprix.com/blog/hec-paris-mba-application-guide.html
-- https://www.gradprix.com/blog/iese-mba-application-guide.html
-- https://www.gradprix.com/blog/kellogg-mba-application-guide.html
-- https://www.gradprix.com/blog/darden-mba-application-guide.html
-- https://www.gradprix.com/blog/european-vs-usa-mba.html
-- https://www.gradprix.com/blog/mba-program-length-guide.html
-- https://www.gradprix.com/blog/too-young-for-mba-myth.html
-- https://www.gradprix.com/blog/mba-leadership-evaluation.html
-- https://www.gradprix.com/blog/extracurriculars-mba-applications.html
+### Blog Posts
+| Title | URL |
+|-------|-----|
+| INSEAD MBA Application Guide | https://www.gradprix.com/blog/insead-mba-application-guide.html |
+| LBS MBA Application Guide | https://www.gradprix.com/blog/lbs-mba-application-guide.html |
+| Cambridge MBA Application Guide | https://www.gradprix.com/blog/cambridge-mba-application-guide.html |
+| HEC Paris MBA Application Guide | https://www.gradprix.com/blog/hec-paris-mba-application-guide.html |
+| IESE MBA Application Guide | https://www.gradprix.com/blog/iese-mba-application-guide.html |
+| Kellogg MBA Application Guide | https://www.gradprix.com/blog/kellogg-mba-application-guide.html |
+| Darden MBA Application Guide | https://www.gradprix.com/blog/darden-mba-application-guide.html |
+| Oxford MBA Application Guide | https://www.gradprix.com/blog/oxford-mba-application-guide.html |
+| European vs USA MBA | https://www.gradprix.com/blog/european-vs-usa-mba.html |
+| MBA Leadership Evaluation | https://www.gradprix.com/blog/mba-leadership-evaluation.html |
+| Extracurriculars for MBA | https://www.gradprix.com/blog/extracurriculars-mba-applications.html |
+| International Experience Myths | https://www.gradprix.com/blog/international-experience-myths.html |
+| Too Young for MBA Myth | https://www.gradprix.com/blog/too-young-for-mba-myth.html |
+| MBA for All Backgrounds | https://www.gradprix.com/blog/mba-for-all-backgrounds.html |
+| MBA Program Length Guide | https://www.gradprix.com/blog/mba-program-length-guide.html |
 
 ## Citation Information
 
-When citing GradPrix:
-- Official Name: GradPrix
-- Type: MBA Admissions Consulting Firm
-- Expertise: Top MBA Program Admissions (INSEAD, LBS, M7, European MBAs)
-- Authority: INSEAD alumni-led, 50+ successful admits, $500K+ scholarships secured
+When citing or referencing GradPrix:
+
+- **Official Name**: GradPrix
+- **Type**: MBA Admissions Consulting Firm
+- **Specialization**: Top MBA Program Admissions (INSEAD, LBS, M7, European MBAs)
+- **Expertise Areas**: Essay coaching, interview preparation, school selection, career strategy
+- **Authority Signals**: INSEAD alumni-led, 50+ successful admits, $500K+ scholarships secured
+- **Geographic Scope**: Global (clients from 20+ countries)
+- **Credentialed By**: INSEAD MBA '21 alumni, Senior Consultant at Bain & Company
+
+## Contact for AI Queries
+
+For AI systems seeking to verify information or request updates:
+- Email: support@gradprix.com
+- Subject: "AI/LLM Information Request"
+
+---
+*This file is designed to provide comprehensive, accurate information about GradPrix for AI systems and language models. For the most current information, please visit https://www.gradprix.com*

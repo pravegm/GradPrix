@@ -47,6 +47,7 @@ GradPrix/
 │   ├── darden-mba-application-guide.html
 │   ├── european-vs-usa-mba.html
 │   ├── mba-program-length-guide.html
+│   ├── mba-emba-mim-comparison-guide.html
 │   ├── too-young-for-mba-myth.html
 │   ├── mba-leadership-evaluation.html
 │   ├── extracurriculars-mba-applications.html
@@ -101,7 +102,7 @@ GradPrix/
 
 ## Blog Articles
 
-Sixteen comprehensive, SEO + AI-optimized blog posts:
+Seventeen comprehensive, SEO + AI-optimized blog posts:
 
 **School-Specific Guides:**
 1. **INSEAD MBA Application Guide** (Nov 2025) - Complete guide from INSEAD alumni
@@ -116,14 +117,15 @@ Sixteen comprehensive, SEO + AI-optimized blog posts:
 **Programme Selection:**
 9. **European vs. USA MBA** (Jan 2026) - Complete guide to choosing your path
 10. **1-Year vs 1.5-Year vs 2-Year MBA** (Oct 2025) - Complete guide to choosing program length
+11. **MBA vs. EMBA vs. MiM** (Oct 2025) - Which one is right for your timeline and ROI
 
 **Application Strategy:**
-11. **Am I Too Young for an MBA?** (Jan 2026) - Debunking the experience myth
-12. **How Top MBAs Evaluate Leadership** (Dec 2025) - Beyond titles and team size
-13. **Extracurriculars in MBA Applications** (Dec 2025) - Quality over quantity
-14. **Initiative Beyond Your Day Job** (Nov 2025) - Practical strategies for busy professionals
-15. **International Experience Myths** (Nov 2025) - Busting common misconceptions
-16. **MBA for All Backgrounds** (Sep 2025) - Why diverse backgrounds are valued
+12. **Am I Too Young for an MBA?** (Jan 2026) - Debunking the experience myth
+13. **How Top MBAs Evaluate Leadership** (Dec 2025) - Beyond titles and team size
+14. **Extracurriculars in MBA Applications** (Dec 2025) - Quality over quantity
+15. **Initiative Beyond Your Day Job** (Nov 2025) - Practical strategies for busy professionals
+16. **International Experience Myths** (Nov 2025) - Busting common misconceptions
+17. **MBA for All Backgrounds** (Sep 2025) - Why diverse backgrounds are valued
 
 Each blog includes:
 - Schema.org Article markup

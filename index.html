@@ -780,117 +780,159 @@
       
       <!-- Compact Testimonial Styles (matching success-stories page) -->
       <style>
+        .testimonials-home-grid {
+          display: grid !important;
+          grid-template-columns: repeat(4, 1fr) !important;
+          gap: 24px !important;
+          align-items: stretch !important;
+        }
         .home-compact-testimonial {
-          background: var(--white);
-          border-radius: var(--radius-md);
-          padding: var(--spacing-md);
-          box-shadow: var(--shadow-sm);
-          border: 1px solid var(--light-gray);
-          transition: box-shadow 0.2s ease, transform 0.2s ease;
+          background: #ffffff !important;
+          border-radius: 12px !important;
+          padding: 24px !important;
+          box-shadow: 0 1px 3px rgba(0,0,0,0.08) !important;
+          border: 1px solid #e5e7eb !important;
+          transition: box-shadow 0.2s ease, transform 0.2s ease !important;
+          display: flex !important;
+          flex-direction: column !important;
+          height: 100% !important;
         }
         .home-compact-testimonial:hover {
-          box-shadow: var(--shadow-md);
-          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(0,0,0,0.12) !important;
+          transform: translateY(-2px) !important;
         }
         .home-compact-testimonial-content {
-          font-size: 0.9rem;
-          color: var(--dark-gray);
-          line-height: 1.65;
-          margin-bottom: var(--spacing-md);
+          font-size: 0.9rem !important;
+          color: #374151 !important;
+          line-height: 1.65 !important;
+          margin-bottom: 16px !important;
+          min-height: 180px !important;
+        }
+        .home-compact-testimonial-footer {
+          margin-top: auto !important;
+        }
+        .home-compact-testimonial .testimonial-expand-btn {
+          margin-bottom: 16px !important;
         }
         .home-compact-testimonial-author {
-          display: flex;
-          align-items: center;
-          gap: var(--spacing-sm);
-          padding-top: var(--spacing-sm);
-          border-top: 1px solid var(--light-gray);
+          display: flex !important;
+          align-items: center !important;
+          gap: 12px !important;
+          padding-top: 12px !important;
+          border-top: 1px solid #e5e7eb !important;
         }
         .home-compact-testimonial-logo {
-          width: 44px;
-          height: 44px;
-          background: var(--off-white);
-          border-radius: var(--radius-sm);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 6px;
-          flex-shrink: 0;
+          width: 44px !important;
+          height: 44px !important;
+          background: #f8f9fa !important;
+          border-radius: 8px !important;
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          padding: 6px !important;
+          flex-shrink: 0 !important;
         }
         .home-compact-testimonial-logo img {
-          max-height: 28px;
-          max-width: 32px;
-          object-fit: contain;
+          max-height: 28px !important;
+          max-width: 32px !important;
+          object-fit: contain !important;
         }
         .home-compact-testimonial-info h5 {
-          font-size: 0.875rem;
-          margin-bottom: 2px;
+          font-size: 0.875rem !important;
+          margin-bottom: 2px !important;
         }
         .home-compact-testimonial-info span {
-          font-size: 0.75rem;
-          color: var(--medium-gray);
+          font-size: 0.75rem !important;
+          color: #6b7280 !important;
         }
         @media (max-width: 1024px) {
           .testimonials-home-grid { grid-template-columns: repeat(2, 1fr) !important; }
+          .home-compact-testimonial-content { min-height: 150px !important; }
         }
         @media (max-width: 640px) {
           .testimonials-home-grid { grid-template-columns: 1fr !important; }
+          .home-compact-testimonial-content { min-height: auto !important; }
         }
       </style>
       
-      <div class="testimonials-home-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--spacing-md);">
+      <div class="testimonials-home-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;align-items:stretch;">
         
-        <!-- Testimonial 1 - Alankrita Patil -->
-        <div class="home-compact-testimonial">
-          <p class="home-compact-testimonial-content">"Working with Praveg was one of the best decisions I made. His attention to detail and honest feedback pushed me to think deeper and present my story with authenticity."</p>
-          <div class="home-compact-testimonial-author">
-            <div class="home-compact-testimonial-logo">
-              <img src="assets/images/schools/tuck.png" alt="Tuck" loading="lazy">
-            </div>
-            <div class="home-compact-testimonial-info">
-              <h5>Alankrita Patil</h5>
-              <span>Ex-ExxonMobil → Tuck</span>
+        <!-- Testimonial 1 - Engineer at Leading Energy Company -->
+        <div class="home-compact-testimonial" style="display:flex;flex-direction:column;height:100%;">
+          <p class="home-compact-testimonial-content" style="min-height:180px;">"Praveg pushed me to <strong>think deeper, write sharper</strong>, and present my story with authenticity. His mentorship was <strong>instrumental in helping me secure my spot at Tuck</strong>."</p>
+          <div class="home-compact-testimonial-footer" style="margin-top:auto;">
+            <button class="testimonial-expand-btn" onclick="openTestimonialModal('Engineer at Leading Energy Company', 'Energy Sector → Tuck', 'assets/images/schools/tuck.png', 'Tuck', 'Working with Praveg was one of the best decisions I made in my MBA application journey. He took the time to truly understand my story and goals, offering a highly personalised approach that never felt cookie-cutter.\n\nWhat stood out most was his attention to detail and his ability to give honest, constructive feedback. He pushed me to think deeper, write sharper, and present my story with authenticity. He was always prompt, clear in communication, and incredibly supportive.\n\nHis mentorship was instrumental in helping me secure my spot at Tuck. I\'m truly grateful to have had him in my corner and I\'d absolutely recommend him to anyone navigating this journey.')">
+              Read Full Story
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+            <div class="home-compact-testimonial-author">
+              <div class="home-compact-testimonial-logo">
+                <img src="assets/images/schools/tuck.png" alt="Tuck" loading="lazy">
+              </div>
+              <div class="home-compact-testimonial-info">
+                <h5>Engineer at Energy Company</h5>
+                <span>Energy Sector → Tuck</span>
+              </div>
             </div>
           </div>
         </div>
         
-        <!-- Testimonial 2 - INSEAD Admit -->
-        <div class="home-compact-testimonial">
-          <p class="home-compact-testimonial-content">"I worked with Rajat and it was worth every penny! I secured an admit to my dream school with scholarship. Working with an INSEAD alum was a huge plus."</p>
-          <div class="home-compact-testimonial-author">
-            <div class="home-compact-testimonial-logo">
-              <img src="assets/images/schools/insead.png" alt="INSEAD MBA Business School Logo - Top European MBA Program" loading="lazy">
-            </div>
-            <div class="home-compact-testimonial-info">
-              <h5>GMAT Club Review</h5>
-              <span>Engineer → INSEAD</span>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Testimonial 3 - Neel Mathur -->
-        <div class="home-compact-testimonial">
-          <p class="home-compact-testimonial-content">"With a tight 40-day deadline, Praveg was confident from the start. His storytelling instincts truly elevated my applications. I secured an admit to LBS!"</p>
-          <div class="home-compact-testimonial-author">
-            <div class="home-compact-testimonial-logo">
-              <img src="assets/images/schools/lbs.png" alt="LBS" loading="lazy">
-            </div>
-            <div class="home-compact-testimonial-info">
-              <h5>Neel Mathur</h5>
-              <span>Ex-Accenture → LBS</span>
+        <!-- Testimonial 2 - Engineer (INSEAD) -->
+        <div class="home-compact-testimonial" style="display:flex;flex-direction:column;height:100%;">
+          <p class="home-compact-testimonial-content" style="min-height:180px;">"Working with an <strong>INSEAD MBA alum was a huge plus</strong>. Rajat helped shape my stories around a common theme. I <strong>secured an admit to my dream school with scholarship</strong>!"</p>
+          <div class="home-compact-testimonial-footer" style="margin-top:auto;">
+            <button class="testimonial-expand-btn" onclick="openTestimonialModal('Engineer', 'Engineering → INSEAD (Scholarship)', 'assets/images/schools/insead.png', 'INSEAD', 'I worked with Rajat and thoroughly found the experience worth every penny! Not only was I able to secure an admit to my dream school but also with scholarship.\n\nThe two biggest strengths I think were the organised way of operations including the portal and breakdown of the various steps to make the process much more modular and easy to get through. Secondly, getting to work with an INSEAD MBA alum was a huge plus as I was able to curate my application accordingly and really convince the school of my fit.\n\nRajat was proactive in responding to my queries even with the time difference. As an engineer I knew my weakness as a storyteller so this service really helped shape my major and minor stories around a common theme and my personal life journey.\n\nAt the end I was proud of my application and irrespective of the outcome I had learnt a lot more about myself in this process. I was satisfied with the essays and work we had done before the admit result came out but the result was surely the cherry on top! Would definitely recommend Rajat if you want to ace your INSEAD MBA application.')">
+              Read Full Story
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+            <div class="home-compact-testimonial-author">
+              <div class="home-compact-testimonial-logo">
+                <img src="assets/images/schools/insead.png" alt="INSEAD MBA Business School Logo - Top European MBA Program" loading="lazy">
+              </div>
+              <div class="home-compact-testimonial-info">
+                <h5>Engineer</h5>
+                <span>Engineering → INSEAD</span>
+              </div>
             </div>
           </div>
         </div>
         
-        <!-- Testimonial 4 - IE Business School -->
-        <div class="home-compact-testimonial">
-          <p class="home-compact-testimonial-content">"As an Indian engineer seeking consulting, I needed help standing out. Rajat's calm demeanor kept me confident. I got admits from 4 top EU schools with scholarships!"</p>
-          <div class="home-compact-testimonial-author">
-            <div class="home-compact-testimonial-logo">
-              <img src="assets/images/schools/ie.png" alt="IE" loading="lazy">
+        <!-- Testimonial 3 - Strategy Consultant -->
+        <div class="home-compact-testimonial" style="display:flex;flex-direction:column;height:100%;">
+          <p class="home-compact-testimonial-content" style="min-height:180px;">"With a <strong>tight 40-day deadline</strong>, Praveg was confident from the start. His storytelling instincts <strong>truly elevated my applications</strong>. I <strong>secured an admit to LBS</strong>, my dream school!"</p>
+          <div class="home-compact-testimonial-footer" style="margin-top:auto;">
+            <button class="testimonial-expand-btn" onclick="openTestimonialModal('Strategy Consultant', 'Consulting → LBS', 'assets/images/schools/lbs.png', 'LBS', 'I highly recommend Praveg as an MBA admissions consultant. When I decided to apply with a tight 40-day deadline, I was unsure it could be done — but Praveg was confident from the start. One of the key reasons I chose to work with him was his consulting background, which aligned closely with mine.\n\nIn our very first call, he quickly grasped my profile and post-MBA goals, and helped craft a compelling narrative to differentiate me from other applicants. Praveg\'s storytelling instincts and editing skills truly elevated my applications. The transformation of my essays from the first drafts to final versions was incredible — clear, impactful, and authentic to my voice.\n\nWhat really stood out was his responsiveness and support. He was always just a message away, willing to hop on calls whenever needed — a huge help given the fast pace and high stakes.\n\nThanks to his guidance, I secured an admit to LBS, my dream school! I\'m incredibly grateful for his expertise and would recommend him without hesitation to anyone navigating the MBA admissions journey.')">
+              Read Full Story
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+            <div class="home-compact-testimonial-author">
+              <div class="home-compact-testimonial-logo">
+                <img src="assets/images/schools/lbs.png" alt="LBS" loading="lazy">
+              </div>
+              <div class="home-compact-testimonial-info">
+                <h5>Strategy Consultant</h5>
+                <span>Consulting → LBS</span>
+              </div>
             </div>
-            <div class="home-compact-testimonial-info">
-              <h5>GMAT Club Review</h5>
-              <span>Engineer → IE + 3 more</span>
+          </div>
+        </div>
+        
+        <!-- Testimonial 4 - Engineer (IE + 3 more) -->
+        <div class="home-compact-testimonial" style="display:flex;flex-direction:column;height:100%;">
+          <p class="home-compact-testimonial-content" style="min-height:180px;">"As an Indian engineer seeking consulting, I needed help standing out. Rajat's calm demeanor <strong>kept me confident</strong>. I got <strong>admits from 4 top EU Business Schools with scholarships</strong>!"</p>
+          <div class="home-compact-testimonial-footer" style="margin-top:auto;">
+            <button class="testimonial-expand-btn" onclick="openTestimonialModal('Engineer', 'Engineering → IE + 3 EU Schools (Scholarships)', 'assets/images/schools/ie.png', 'IE Business School', 'Exactly one year back, around the same time, I remember I was doing intensive research on MBA consultants, reading GMAT Club forum reviews, and going through website testimonials. After several profile evaluations with different MBA consultants, I made my decision. And I can happily say that it was the best decision.\n\nAlso, since going with an MBA consultant meant that I had to pay some significant money, this difficult decision to choose the MBA consultant involved several variables for me. Coming from an over-represented pool, an Indian engineer who is seeking to get into consulting, I knew exactly that I would go with an MBA consultant with a great success rate of helping Indians get into top EU business schools with average GMAT scores.\n\nThroughout the application journey, I really felt confident about the fact that my application is more than my average 700 GMAT score and with well written and impactful application essays, I can ace the MBA applications.\n\nAfter onboarding, I was really impressed by the consultant mapping process. The team understood what my requirements were and mapped me with Rajat, a mechanical engineer from India who pursued his MBA from top EU business school and went into consulting. That was exactly who I was looking for, someone who has exactly gone through the same journey.\n\nHis calm demeanor always helped me stay confident and stress free through the application process. The best thing about him was that no matter how busy he was, he got back to me as soon as possible. From quick WhatsApp replies to scheduling multiple calls, his support was pivotal in building my MBA brand, guiding me through essays, CV writing, and finally helping me ace the interviews.\n\nFinally, I was able to get admits from 4 top EU Business Schools with scholarships. I finally decided to join IE Business School, which aligned better with my post MBA goals and what I wanted to gain out of my MBA.')">
+              Read Full Story
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+            <div class="home-compact-testimonial-author">
+              <div class="home-compact-testimonial-logo">
+                <img src="assets/images/schools/ie.png" alt="IE" loading="lazy">
+              </div>
+              <div class="home-compact-testimonial-info">
+                <h5>Engineer</h5>
+                <span>Engineering → IE + 3 more</span>
+              </div>
             </div>
           </div>
         </div>

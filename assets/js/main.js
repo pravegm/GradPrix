@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
   initFormHandling();
   initAnimations();
   initPremiumEffects();
+  initTestimonialModal();
 });
 
 /**
@@ -789,4 +790,226 @@ function throttle(func, limit) {
       setTimeout(() => inThrottle = false, limit);
     }
   };
+}
+
+/**
+ * Testimonial Modal functionality
+ */
+function initTestimonialModal() {
+  // Create modal container if it doesn't exist
+  if (!document.getElementById('testimonialModal')) {
+    const modalHTML = `
+      <div id="testimonialModal" class="testimonial-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="testimonial-modal-overlay"></div>
+        <div class="testimonial-modal-content">
+          <button class="testimonial-modal-close" aria-label="Close modal">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+          <div class="testimonial-modal-header">
+            <div class="testimonial-modal-logo" id="modalLogo"></div>
+            <div class="testimonial-modal-author">
+              <h4 id="modalTitle"></h4>
+              <span id="modalSubtitle"></span>
+            </div>
+          </div>
+          <div class="testimonial-modal-body" id="modalBody"></div>
+        </div>
+      </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+    
+    // Add modal styles
+    const modalStyles = document.createElement('style');
+    modalStyles.id = 'testimonial-modal-styles';
+    modalStyles.textContent = `
+      .testimonial-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10000;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+      .testimonial-modal.active {
+        display: flex;
+      }
+      .testimonial-modal-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(26, 39, 68, 0.75);
+        backdrop-filter: blur(4px);
+        animation: modalFadeIn 0.3s ease;
+      }
+      .testimonial-modal-content {
+        position: relative;
+        background: #fff;
+        border-radius: 16px;
+        max-width: 680px;
+        width: 100%;
+        max-height: 85vh;
+        overflow-y: auto;
+        padding: 32px;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        animation: modalSlideIn 0.3s ease;
+      }
+      .testimonial-modal-close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 40px;
+        height: 40px;
+        border: none;
+        background: #f5f5f5;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #1a2744;
+        transition: background 0.2s, transform 0.2s;
+      }
+      .testimonial-modal-close:hover {
+        background: #e5e5e5;
+        transform: scale(1.05);
+      }
+      .testimonial-modal-header {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 24px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .testimonial-modal-logo {
+        width: 56px;
+        height: 56px;
+        background: #f8f9fa;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+        flex-shrink: 0;
+      }
+      .testimonial-modal-logo img {
+        max-height: 36px;
+        max-width: 40px;
+        object-fit: contain;
+      }
+      .testimonial-modal-author h4 {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: #1a2744;
+        margin-bottom: 4px;
+      }
+      .testimonial-modal-author span {
+        font-size: 0.875rem;
+        color: #6b7280;
+      }
+      .testimonial-modal-body {
+        font-size: 1rem;
+        line-height: 1.75;
+        color: #374151;
+      }
+      .testimonial-modal-body p {
+        margin-bottom: 16px;
+      }
+      .testimonial-modal-body p:last-child {
+        margin-bottom: 0;
+      }
+      @keyframes modalFadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes modalSlideIn {
+        from { opacity: 0; transform: translateY(20px) scale(0.95); }
+        to { opacity: 1; transform: translateY(0) scale(1); }
+      }
+      @media (max-width: 640px) {
+        .testimonial-modal-content {
+          padding: 24px;
+          max-height: 90vh;
+        }
+        .testimonial-modal-header {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+      
+      /* Expand button styles */
+      .testimonial-expand-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        margin-top: 12px;
+        padding: 8px 14px;
+        background: transparent;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        font-size: 0.8125rem;
+        font-weight: 500;
+        color: #1a2744;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      .testimonial-expand-btn:hover {
+        background: #1a2744;
+        border-color: #1a2744;
+        color: #fff;
+      }
+      .testimonial-expand-btn svg {
+        width: 14px;
+        height: 14px;
+      }
+    `;
+    document.head.appendChild(modalStyles);
+  }
+  
+  const modal = document.getElementById('testimonialModal');
+  const overlay = modal.querySelector('.testimonial-modal-overlay');
+  const closeBtn = modal.querySelector('.testimonial-modal-close');
+  
+  // Close modal function
+  function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  
+  // Open modal function
+  window.openTestimonialModal = function(title, subtitle, logoSrc, logoAlt, fullText) {
+    document.getElementById('modalTitle').textContent = title;
+    document.getElementById('modalSubtitle').textContent = subtitle;
+    document.getElementById('modalLogo').innerHTML = `<img src="${logoSrc}" alt="${logoAlt}">`;
+    
+    // Split text into paragraphs
+    const paragraphs = fullText.split('\n\n').filter(p => p.trim());
+    document.getElementById('modalBody').innerHTML = paragraphs.map(p => `<p>${p}</p>`).join('');
+    
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    
+    // Focus trap for accessibility
+    closeBtn.focus();
+  };
+  
+  // Event listeners
+  overlay.addEventListener('click', closeModal);
+  closeBtn.addEventListener('click', closeModal);
+  
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
 }

@@ -1,0 +1,20 @@
+---
+description: How to start localhost server on this Windows system
+alwaysApply: true
+---
+
+# Starting Localhost Server
+
+Node.js is installed at `C:\Program Files\nodejs` but is NOT in the system PATH.
+
+To start a local development server, use this command:
+
+```powershell
+$env:PATH = "C:\Program Files\nodejs;" + $env:PATH; npx serve
+```
+
+This will:
+1. Temporarily add Node.js to the PATH
+2. Start the serve package on port 3000
+
+The site will be available at **http://localhost:3000**

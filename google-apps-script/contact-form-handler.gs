@@ -369,7 +369,7 @@ function sendUserConfirmation(data) {
             </ul>
           </div>
           
-          <p>In the meantime, feel free to explore our <a href="https://gradprix.com/resources.html" style="color: #c9a961;">blog</a> for insights on the MBA application process.</p>
+          <p>In the meantime, feel free to explore our <a href="https://www.gradprix.com/resources.html" style="color: #c9a961;">blog</a> for insights on the MBA application process.</p>
           
           <p>If you have any urgent questions, don't hesitate to reply to this email or call us at <strong>+44 7865 267776</strong>.</p>
           

@@ -1,0 +1,20 @@
+---
+description: Git executable path for this Windows system
+alwaysApply: true
+---
+
+# Git Configuration
+
+Git is installed at a custom location on this Windows system. Always use the full path when running git commands:
+
+```powershell
+& "C:\Users\59527\AppData\Local\Programs\Git\cmd\git.exe" <command>
+```
+
+Example usage:
+```powershell
+& "C:\Users\59527\AppData\Local\Programs\Git\cmd\git.exe" status
+& "C:\Users\59527\AppData\Local\Programs\Git\cmd\git.exe" add -A
+& "C:\Users\59527\AppData\Local\Programs\Git\cmd\git.exe" commit -m "message"
+& "C:\Users\59527\AppData\Local\Programs\Git\cmd\git.exe" push
+```

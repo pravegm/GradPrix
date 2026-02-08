@@ -8,18 +8,26 @@ Premium MBA admissions consulting website for **GradPrix** - helping candidates 
 
 ### Run Locally
 
-**Option 1: Python Server (Recommended)**
+**Option 1: Node (serve) on Windows (PowerShell)**
+```powershell
+$env:PATH = "C:\Program Files\nodejs;" + $env:PATH
+cd c:\Projects\GradPrix
+npx serve -l 3000
+```
+Then open **http://localhost:3000**
+
+**Option 2: Python Server**
 ```bash
 cd /path/to/GradPrix
 python3 -m http.server 8000
 ```
-Visit `http://localhost:8000`
+Visit `http://localhost:8000` (requires Python in PATH)
 
-**Option 2: VS Code Live Server**
-Install the "Live Server" extension and click "Go Live"
+**Option 3: VS Code Live Server**
+Install the "Live Server" extension, open the GradPrix folder, then click "Go Live". The extension will pick a port (e.g. 5500) and open the browser.
 
-**Option 3: Direct File**
-Simply open `index.html` in your browser (some features may not work due to CORS)
+**Option 4: Open file directly**
+Double-click `index.html` or drag it into your browser. The site will load from `file://`. Navigation and most content work; some features (e.g. contact form, strict CORS) may not.
 
 ## Project Structure
 
@@ -48,6 +56,7 @@ GradPrix/
 │   ├── european-vs-usa-mba.html
 │   ├── mba-program-length-guide.html
 │   ├── mba-emba-mim-comparison-guide.html
+│   ├── reapplicant-playbook-show-growth.html
 │   ├── too-young-for-mba-myth.html
 │   ├── mba-leadership-evaluation.html
 │   ├── extracurriculars-mba-applications.html
@@ -102,7 +111,7 @@ GradPrix/
 
 ## Blog Articles
 
-Seventeen comprehensive, SEO + AI-optimized blog posts:
+Eighteen comprehensive, SEO + AI-optimized blog posts:
 
 **School-Specific Guides:**
 1. **INSEAD MBA Application Guide** (Nov 2025) - Complete guide from INSEAD alumni
@@ -120,12 +129,13 @@ Seventeen comprehensive, SEO + AI-optimized blog posts:
 11. **MBA vs. EMBA vs. MiM** (Oct 2025) - Which one is right for your timeline and ROI
 
 **Application Strategy:**
-12. **Am I Too Young for an MBA?** (Jan 2026) - Debunking the experience myth
-13. **How Top MBAs Evaluate Leadership** (Dec 2025) - Beyond titles and team size
-14. **Extracurriculars in MBA Applications** (Dec 2025) - Quality over quantity
-15. **Initiative Beyond Your Day Job** (Nov 2025) - Practical strategies for busy professionals
-16. **International Experience Myths** (Nov 2025) - Busting common misconceptions
-17. **MBA for All Backgrounds** (Sep 2025) - Why diverse backgrounds are valued
+12. **Reapplicant Playbook: How to Show Growth (Without Apologizing)** (Feb 2026) - Reapplication strategy and growth narrative
+13. **Am I Too Young for an MBA?** (Jan 2026) - Debunking the experience myth
+14. **How Top MBAs Evaluate Leadership** (Dec 2025) - Beyond titles and team size
+15. **Extracurriculars in MBA Applications** (Dec 2025) - Quality over quantity
+16. **Initiative Beyond Your Day Job** (Nov 2025) - Practical strategies for busy professionals
+17. **International Experience Myths** (Nov 2025) - Busting common misconceptions
+18. **MBA for All Backgrounds** (Sep 2025) - Why diverse backgrounds are valued
 
 Each blog includes:
 - Schema.org Article markup

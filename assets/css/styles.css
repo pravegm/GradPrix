@@ -4354,3 +4354,391 @@ img {
     font-size: 1.25rem;
   }
 }
+
+/* ============================================
+   Blog Table of Contents - Floating Glass Card
+   with sliding pill indicator
+   ============================================ */
+.blog-toc-nav {
+  display: none;
+}
+
+@media (min-width: 1340px) {
+  .blog-toc-nav {
+    display: block;
+    position: fixed;
+    top: 120px;
+    left: calc(50% + 430px);
+    width: 220px;
+    max-height: calc(100vh - 160px);
+    overflow-y: auto;
+    z-index: 50;
+    padding: 20px 16px 20px 0;
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(26, 39, 68, 0.06);
+    border-radius: var(--radius-lg);
+    box-shadow:
+      0 1px 3px rgba(0, 0, 0, 0.02),
+      0 8px 24px rgba(0, 0, 0, 0.04);
+    opacity: 0;
+    transform: translateX(8px);
+    animation: tocFadeIn 0.5s ease 0.6s forwards;
+  }
+}
+
+@keyframes tocFadeIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Reading progress bar at top of card */
+.blog-toc-nav .toc-progress-bar {
+  position: absolute;
+  top: 0;
+  left: 12px;
+  right: 12px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--light-gray);
+  overflow: hidden;
+}
+
+.blog-toc-nav .toc-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-light));
+  border-radius: 1px;
+  transition: width 0.15s ease-out;
+}
+
+/* Label */
+.blog-toc-nav .toc-label {
+  font-family: var(--font-secondary);
+  font-size: 0.625rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent-gold);
+  margin: 0 0 14px 20px;
+  opacity: 0.85;
+}
+
+/* List container - positioned for the sliding pill */
+.blog-toc-nav .toc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+/* Sliding pill indicator */
+.blog-toc-nav .toc-pill {
+  position: absolute;
+  left: 4px;
+  top: 0;
+  width: calc(100% - 4px);
+  height: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(201, 162, 39, 0.08),
+    rgba(201, 162, 39, 0.04)
+  );
+  border-left: 2px solid var(--accent-gold);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  transition:
+    top 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    height 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.2s ease;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.blog-toc-nav .toc-pill.is-visible {
+  opacity: 1;
+}
+
+/* Item */
+.blog-toc-nav .toc-item {
+  margin: 0;
+}
+
+/* Link */
+.blog-toc-nav .toc-link {
+  display: block;
+  font-family: var(--font-secondary);
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--medium-gray);
+  text-decoration: none;
+  padding: 6px 12px 6px 20px;
+  line-height: 1.45;
+  opacity: 0.65;
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
+  position: relative;
+}
+
+.blog-toc-nav .toc-link:hover {
+  color: var(--primary-navy);
+  opacity: 1;
+}
+
+.blog-toc-nav .toc-link.is-active {
+  color: var(--primary-navy);
+  font-weight: 600;
+  opacity: 1;
+}
+
+/* Sub-items (h3) */
+.blog-toc-nav .toc-item--h3 .toc-link {
+  font-size: 0.73rem;
+  padding-left: 32px;
+}
+
+/* Scrollbar styling */
+.blog-toc-nav::-webkit-scrollbar {
+  width: 3px;
+}
+
+.blog-toc-nav::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.blog-toc-nav::-webkit-scrollbar-thumb {
+  background: var(--light-gray);
+  border-radius: 4px;
+}
+
+/* ============================================
+   Mobile TOC - Bottom sheet drawer
+   ============================================ */
+
+/* Floating trigger button */
+.blog-toc-mobile-btn {
+  display: none;
+}
+
+@media (max-width: 1339px) {
+  .blog-toc-mobile-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    position: fixed;
+    bottom: 24px;
+    right: 20px;
+    z-index: 999;
+    padding: 10px 16px;
+    font-family: var(--font-secondary);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    background: var(--primary-navy);
+    border: none;
+    border-radius: 50px;
+    box-shadow:
+      0 2px 8px rgba(26, 39, 68, 0.25),
+      0 8px 24px rgba(26, 39, 68, 0.15);
+    cursor: pointer;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .blog-toc-mobile-btn:active {
+    transform: scale(0.95);
+  }
+
+  .blog-toc-mobile-btn svg {
+    width: 14px;
+    height: 14px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    flex-shrink: 0;
+  }
+}
+
+/* Backdrop overlay */
+.blog-toc-overlay {
+  display: none;
+}
+
+@media (max-width: 1339px) {
+  .blog-toc-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: rgba(13, 17, 23, 0.4);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .blog-toc-overlay.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+/* Bottom sheet drawer */
+.blog-toc-drawer {
+  display: none;
+}
+
+@media (max-width: 1339px) {
+  .blog-toc-drawer {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+    max-height: 70vh;
+    background: var(--white);
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -4px 32px rgba(0, 0, 0, 0.1);
+    transform: translateY(100%);
+    transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+    overflow: hidden;
+  }
+
+  .blog-toc-drawer.is-open {
+    transform: translateY(0);
+  }
+
+  /* Drag handle */
+  .blog-toc-drawer-handle {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0 4px;
+  }
+
+  .blog-toc-drawer-handle::after {
+    content: '';
+    width: 36px;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--light-gray);
+  }
+
+  /* Drawer header */
+  .blog-toc-drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 20px 12px;
+    border-bottom: 1px solid rgba(232, 234, 237, 0.6);
+  }
+
+  .blog-toc-drawer-title {
+    font-family: var(--font-secondary);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent-gold);
+    margin: 0;
+  }
+
+  .blog-toc-drawer-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: var(--off-white);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    color: var(--medium-gray);
+    transition: background 0.15s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .blog-toc-drawer-close:active {
+    background: var(--light-gray);
+  }
+
+  .blog-toc-drawer-close svg {
+    width: 14px;
+    height: 14px;
+    stroke: currentColor;
+    stroke-width: 2;
+    fill: none;
+    stroke-linecap: round;
+  }
+
+  /* Drawer list */
+  .blog-toc-drawer-list {
+    list-style: none;
+    margin: 0;
+    padding: 8px 0 max(env(safe-area-inset-bottom, 16px), 16px);
+    overflow-y: auto;
+    max-height: calc(70vh - 80px);
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+  }
+
+  .blog-toc-drawer-item {
+    margin: 0;
+  }
+
+  .blog-toc-drawer-link {
+    display: block;
+    font-family: var(--font-secondary);
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--medium-gray);
+    text-decoration: none;
+    padding: 10px 24px;
+    line-height: 1.45;
+    transition: background 0.15s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .blog-toc-drawer-link:active {
+    background: var(--off-white);
+  }
+
+  .blog-toc-drawer-link.is-active {
+    color: var(--primary-navy);
+    font-weight: 600;
+    border-left: 3px solid var(--accent-gold);
+    padding-left: 21px;
+    background: rgba(201, 162, 39, 0.04);
+  }
+
+  .blog-toc-drawer-item--h3 .blog-toc-drawer-link {
+    font-size: 0.825rem;
+    padding-left: 40px;
+  }
+
+  .blog-toc-drawer-item--h3 .blog-toc-drawer-link.is-active {
+    padding-left: 37px;
+  }
+
+  /* Reading progress in drawer header */
+  .blog-toc-drawer-progress {
+    height: 2px;
+    background: var(--light-gray);
+    overflow: hidden;
+  }
+
+  .blog-toc-drawer-progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--accent-gold), var(--accent-gold-light));
+    transition: width 0.15s ease-out;
+  }
+}

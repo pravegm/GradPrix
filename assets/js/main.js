@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
   initAnimations();
   initPremiumEffects();
   initTestimonialModal();
+  initBlogTOC();
 });
 
 /**
@@ -371,6 +372,293 @@ function initSmoothScroll() {
       }
     });
   });
+}
+
+/**
+ * Blog Table of Contents
+ * Floating frosted-glass card on the right (>=1340px).
+ * Sliding gold pill indicator glides to the active section.
+ * Reading progress bar at top of the card.
+ */
+function initBlogTOC() {
+  var content = document.querySelector('.blog-post-content');
+  if (!content) return;
+
+  var allHeadings = content.querySelectorAll('h2, h3');
+  var exclude = '.gradprix-cta, .blog-post-tags, .blog-post-share';
+  var headings = Array.from(allHeadings).filter(function (h) {
+    return !h.closest(exclude);
+  });
+  if (headings.length < 3) return;
+
+  // --- Slugify & assign IDs ---
+  var slugify = function (t) {
+    return t.trim().toLowerCase()
+      .replace(/[^\w\s-]/g, '')
+      .replace(/\s+/g, '-')
+      .replace(/-+/g, '-')
+      .replace(/^-|-$/g, '');
+  };
+  var usedIds = {};
+  headings.forEach(function (el, i) {
+    if (!el.id) {
+      var base = slugify(el.textContent);
+      if (base.length > 50) base = base.slice(0, 50);
+      if (!base || /^\d/.test(base)) base = 'section-' + i;
+      var id = base, n = 0;
+      while (usedIds[id]) { n++; id = base + '-' + n; }
+      usedIds[id] = true;
+      el.id = id;
+    }
+  });
+
+  // --- Build DOM ---
+  var nav = document.createElement('nav');
+  nav.className = 'blog-toc-nav';
+  nav.setAttribute('aria-label', 'Table of contents');
+
+  // Reading progress bar
+  var progressBar = document.createElement('div');
+  progressBar.className = 'toc-progress-bar';
+  var progressFill = document.createElement('div');
+  progressFill.className = 'toc-progress-fill';
+  progressBar.appendChild(progressFill);
+  nav.appendChild(progressBar);
+
+  // Label
+  var label = document.createElement('p');
+  label.className = 'toc-label';
+  label.textContent = 'On this page';
+  nav.appendChild(label);
+
+  // List
+  var ul = document.createElement('ul');
+  ul.className = 'toc-list';
+
+  // Sliding pill indicator
+  var pill = document.createElement('div');
+  pill.className = 'toc-pill';
+  ul.appendChild(pill);
+
+  headings.forEach(function (h) {
+    var li = document.createElement('li');
+    li.className = 'toc-item' + (h.tagName === 'H3' ? ' toc-item--h3' : '');
+    var a = document.createElement('a');
+    a.className = 'toc-link';
+    a.href = '#' + h.id;
+    a.textContent = h.textContent.trim();
+    li.appendChild(a);
+    ul.appendChild(li);
+  });
+
+  nav.appendChild(ul);
+  document.body.appendChild(nav);
+
+  // ==============================
+  // Mobile: bottom-sheet drawer
+  // ==============================
+  // Trigger button
+  var mobileBtn = document.createElement('button');
+  mobileBtn.className = 'blog-toc-mobile-btn';
+  mobileBtn.type = 'button';
+  mobileBtn.setAttribute('aria-label', 'Open table of contents');
+  mobileBtn.innerHTML = '<svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="15" y2="12"/><line x1="3" y1="18" x2="18" y2="18"/></svg>Contents';
+
+  // Overlay
+  var overlay = document.createElement('div');
+  overlay.className = 'blog-toc-overlay';
+
+  // Drawer
+  var drawer = document.createElement('div');
+  drawer.className = 'blog-toc-drawer';
+  drawer.setAttribute('role', 'dialog');
+  drawer.setAttribute('aria-label', 'Table of contents');
+
+  var drawerHandle = document.createElement('div');
+  drawerHandle.className = 'blog-toc-drawer-handle';
+
+  var drawerHeader = document.createElement('div');
+  drawerHeader.className = 'blog-toc-drawer-header';
+
+  var drawerTitle = document.createElement('p');
+  drawerTitle.className = 'blog-toc-drawer-title';
+  drawerTitle.textContent = 'On this page';
+
+  var drawerClose = document.createElement('button');
+  drawerClose.type = 'button';
+  drawerClose.className = 'blog-toc-drawer-close';
+  drawerClose.setAttribute('aria-label', 'Close');
+  drawerClose.innerHTML = '<svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+
+  drawerHeader.appendChild(drawerTitle);
+  drawerHeader.appendChild(drawerClose);
+
+  // Drawer progress
+  var drawerProgress = document.createElement('div');
+  drawerProgress.className = 'blog-toc-drawer-progress';
+  var drawerProgressFill = document.createElement('div');
+  drawerProgressFill.className = 'blog-toc-drawer-progress-fill';
+  drawerProgress.appendChild(drawerProgressFill);
+
+  // Drawer list
+  var drawerList = document.createElement('ul');
+  drawerList.className = 'blog-toc-drawer-list';
+
+  headings.forEach(function (h) {
+    var li = document.createElement('li');
+    li.className = 'blog-toc-drawer-item' + (h.tagName === 'H3' ? ' blog-toc-drawer-item--h3' : '');
+    var a = document.createElement('a');
+    a.className = 'blog-toc-drawer-link';
+    a.href = '#' + h.id;
+    a.textContent = h.textContent.trim();
+    li.appendChild(a);
+    drawerList.appendChild(li);
+  });
+
+  drawer.appendChild(drawerHandle);
+  drawer.appendChild(drawerHeader);
+  drawer.appendChild(drawerProgress);
+  drawer.appendChild(drawerList);
+
+  document.body.appendChild(mobileBtn);
+  document.body.appendChild(overlay);
+  document.body.appendChild(drawer);
+
+  // Drawer open/close
+  var drawerOpen = false;
+
+  function openDrawer() {
+    drawerOpen = true;
+    drawer.classList.add('is-open');
+    overlay.classList.add('is-open');
+    mobileBtn.style.opacity = '0';
+    mobileBtn.style.pointerEvents = 'none';
+    document.body.style.overflow = 'hidden';
+    // Scroll active item into view inside drawer
+    var activeDrawerLink = drawerList.querySelector('.blog-toc-drawer-link.is-active');
+    if (activeDrawerLink) {
+      setTimeout(function () {
+        activeDrawerLink.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      }, 100);
+    }
+  }
+
+  function closeDrawer() {
+    drawerOpen = false;
+    drawer.classList.remove('is-open');
+    overlay.classList.remove('is-open');
+    mobileBtn.style.opacity = '';
+    mobileBtn.style.pointerEvents = '';
+    document.body.style.overflow = '';
+  }
+
+  mobileBtn.addEventListener('click', openDrawer);
+  overlay.addEventListener('click', closeDrawer);
+  drawerClose.addEventListener('click', closeDrawer);
+
+  // Close on link click + smooth scroll
+  drawerList.addEventListener('click', function (e) {
+    var link = e.target.closest('.blog-toc-drawer-link');
+    if (!link) return;
+    e.preventDefault();
+    closeDrawer();
+    var href = link.getAttribute('href');
+    if (!href) return;
+    var targetEl = document.querySelector(href);
+    if (!targetEl) return;
+    setTimeout(function () {
+      var top = targetEl.getBoundingClientRect().top + window.pageYOffset - navbarH - 20;
+      window.scrollTo({ top: top, behavior: 'smooth' });
+    }, 100);
+  });
+
+  // ==============================
+  // Shared: sliding pill, scroll spy, progress
+  // ==============================
+  function movePill(activeLink) {
+    if (!activeLink) {
+      pill.classList.remove('is-visible');
+      return;
+    }
+    var li = activeLink.parentElement;
+    pill.style.top = li.offsetTop + 'px';
+    pill.style.height = li.offsetHeight + 'px';
+    pill.classList.add('is-visible');
+  }
+
+  var navbarH = document.getElementById('navbar')
+    ? document.getElementById('navbar').offsetHeight : 80;
+  var scrollOffset = navbarH + 60;
+
+  function updateProgress() {
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (docHeight <= 0) {
+      progressFill.style.width = '0%';
+      drawerProgressFill.style.width = '0%';
+      return;
+    }
+    var pct = Math.min(100, Math.max(0, (window.scrollY / docHeight) * 100));
+    progressFill.style.width = pct + '%';
+    drawerProgressFill.style.width = pct + '%';
+  }
+
+  function updateActive() {
+    var currentId = null;
+    for (var i = headings.length - 1; i >= 0; i--) {
+      if (headings[i].getBoundingClientRect().top <= scrollOffset) {
+        currentId = headings[i].id;
+        break;
+      }
+    }
+    if (!currentId && headings.length) currentId = headings[0].id;
+
+    // Desktop TOC
+    var activeLink = null;
+    var links = ul.querySelectorAll('.toc-link');
+    links.forEach(function (l) {
+      var href = l.getAttribute('href');
+      var id = href ? href.slice(1) : '';
+      var isActive = id === currentId;
+      l.classList.toggle('is-active', isActive);
+      if (isActive) activeLink = l;
+    });
+    movePill(activeLink);
+
+    // Mobile drawer links
+    var drawerLinks = drawerList.querySelectorAll('.blog-toc-drawer-link');
+    drawerLinks.forEach(function (l) {
+      var href = l.getAttribute('href');
+      var id = href ? href.slice(1) : '';
+      l.classList.toggle('is-active', id === currentId);
+    });
+
+    updateProgress();
+  }
+
+  window.addEventListener('scroll', function () {
+    requestAnimationFrame(updateActive);
+  }, { passive: true });
+
+  // Desktop smooth-scroll click
+  ul.addEventListener('click', function (e) {
+    var link = e.target.closest('.toc-link');
+    if (!link) return;
+    var href = link.getAttribute('href');
+    if (!href) return;
+    var target = document.querySelector(href);
+    if (!target) return;
+    e.preventDefault();
+    var top = target.getBoundingClientRect().top + window.pageYOffset - navbarH - 20;
+    window.scrollTo({ top: top, behavior: 'smooth' });
+  });
+
+  // Initial update after fonts load
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(function () { updateActive(); });
+  } else {
+    setTimeout(function () { updateActive(); }, 200);
+  }
+  updateActive();
 }
 
 /**

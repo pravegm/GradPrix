@@ -62,6 +62,7 @@ GradPrix/
 │   ├── extracurriculars-mba-applications.html
 │   ├── international-experience-myths.html
 │   ├── initiative-beyond-day-job.html
+│   ├── optional-essay-decision-tree.html
 │   └── mba-for-all-backgrounds.html
 │
 ├── google-apps-script/           # Backend form handling
@@ -111,7 +112,7 @@ GradPrix/
 
 ## Blog Articles
 
-Eighteen comprehensive, SEO + AI-optimized blog posts:
+Nineteen comprehensive, SEO + AI-optimized blog posts:
 
 **School-Specific Guides:**
 1. **INSEAD MBA Application Guide** (Nov 2025) - Complete guide from INSEAD alumni
@@ -129,13 +130,14 @@ Eighteen comprehensive, SEO + AI-optimized blog posts:
 11. **MBA vs. EMBA vs. MiM** (Oct 2025) - Which one is right for your timeline and ROI
 
 **Application Strategy:**
-12. **Reapplicant Playbook: How to Show Growth (Without Apologizing)** (Feb 2026) - Reapplication strategy and growth narrative
-13. **Am I Too Young for an MBA?** (Jan 2026) - Debunking the experience myth
-14. **How Top MBAs Evaluate Leadership** (Dec 2025) - Beyond titles and team size
-15. **Extracurriculars in MBA Applications** (Dec 2025) - Quality over quantity
-16. **Initiative Beyond Your Day Job** (Nov 2025) - Practical strategies for busy professionals
-17. **International Experience Myths** (Nov 2025) - Busting common misconceptions
-18. **MBA for All Backgrounds** (Sep 2025) - Why diverse backgrounds are valued
+12. **Optional Essay Decision Tree: Should You Write One, and What to Say** (Feb 2026) - Decision framework for the MBA optional essay
+13. **Reapplicant Playbook: How to Show Growth (Without Apologizing)** (Feb 2026) - Reapplication strategy and growth narrative
+14. **Am I Too Young for an MBA?** (Jan 2026) - Debunking the experience myth
+15. **How Top MBAs Evaluate Leadership** (Dec 2025) - Beyond titles and team size
+16. **Extracurriculars in MBA Applications** (Dec 2025) - Quality over quantity
+17. **Initiative Beyond Your Day Job** (Nov 2025) - Practical strategies for busy professionals
+18. **International Experience Myths** (Nov 2025) - Busting common misconceptions
+19. **MBA for All Backgrounds** (Sep 2025) - Why diverse backgrounds are valued
 
 Each blog includes:
 - Schema.org Article markup

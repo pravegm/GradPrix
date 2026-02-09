@@ -63,7 +63,8 @@ GradPrix/
 │   ├── international-experience-myths.html
 │   ├── initiative-beyond-day-job.html
 │   ├── optional-essay-decision-tree.html
-│   └── mba-for-all-backgrounds.html
+│   ├── mba-for-all-backgrounds.html
+│   └── mba-resume-teardown.html
 │
 ├── google-apps-script/           # Backend form handling
 │   └── contact-form-handler.gs   # Google Apps Script for form submissions
@@ -112,7 +113,7 @@ GradPrix/
 
 ## Blog Articles
 
-Nineteen comprehensive, SEO + AI-optimized blog posts:
+Twenty comprehensive, SEO + AI-optimized blog posts:
 
 **School-Specific Guides:**
 1. **INSEAD MBA Application Guide** (Nov 2025) - Complete guide from INSEAD alumni
@@ -138,6 +139,7 @@ Nineteen comprehensive, SEO + AI-optimized blog posts:
 17. **Initiative Beyond Your Day Job** (Nov 2025) - Practical strategies for busy professionals
 18. **International Experience Myths** (Nov 2025) - Busting common misconceptions
 19. **MBA for All Backgrounds** (Sep 2025) - Why diverse backgrounds are valued
+20. **MBA Resume Teardown** (Feb 2026) - What to cut, what to keep, what to prove
 
 Each blog includes:
 - Schema.org Article markup

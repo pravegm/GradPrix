@@ -138,11 +138,38 @@ Allow: /
 User-agent: BraveBot
 Allow: /
 
+# xAI (Grok, Grok-2, Grok-4)
+User-agent: xAI
+Allow: /
+
+User-agent: Grok
+Allow: /
+
+# DeepSeek AI
+User-agent: DeepSeekBot
+Allow: /
+
+# Mistral AI
+User-agent: MistralBot
+Allow: /
+
 # AI research crawlers
 User-agent: Diffbot
 Allow: /
 
 User-agent: Bytespider
+Allow: /
+
+# SearchGPT / OpenAI Search
+User-agent: SearchGPT
+Allow: /
+
+# Phind AI Search
+User-agent: PhindBot
+Allow: /
+
+# AI21 Labs
+User-agent: AI21Bot
 Allow: /
 
 # SemrushBot for SEO analysis
@@ -151,6 +178,10 @@ Allow: /
 
 # Ahrefs for SEO analysis
 User-agent: AhrefsBot
+Allow: /
+
+# Moz for SEO analysis
+User-agent: rogerbot
 Allow: /
 
 # ============================================

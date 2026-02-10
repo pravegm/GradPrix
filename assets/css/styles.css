@@ -4385,6 +4385,13 @@ img {
     opacity: 0;
     transform: translateX(8px);
     animation: tocFadeIn 0.5s ease 0.6s forwards;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+  }
+
+  .blog-toc-nav.is-hidden {
+    opacity: 0 !important;
+    pointer-events: none;
+    transform: translateX(8px);
   }
 }
 
@@ -4547,8 +4554,14 @@ img {
     cursor: pointer;
     transition:
       transform 0.2s ease,
-      box-shadow 0.2s ease;
+      box-shadow 0.2s ease,
+      opacity 0.35s ease;
     -webkit-tap-highlight-color: transparent;
+  }
+
+  .blog-toc-mobile-btn.is-hidden {
+    opacity: 0 !important;
+    pointer-events: none;
   }
 
   .blog-toc-mobile-btn:active {

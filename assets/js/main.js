@@ -624,6 +624,26 @@ function initBlogTOC() {
     });
     movePill(activeLink);
 
+    // Auto-scroll the active TOC link into view within the nav
+    if (activeLink) {
+      var liRect = activeLink.parentElement.getBoundingClientRect();
+      var navRect = nav.getBoundingClientRect();
+      // If active item is above the visible nav area (with buffer for label)
+      if (liRect.top < navRect.top + 60) {
+        nav.scrollBy({ top: liRect.top - navRect.top - 60, behavior: 'smooth' });
+      }
+      // If active item is below the visible nav area
+      else if (liRect.bottom > navRect.bottom - 20) {
+        nav.scrollBy({ top: liRect.bottom - navRect.bottom + 20, behavior: 'smooth' });
+      }
+    }
+
+    // Hide TOC when user scrolls past the blog content (into related articles / footer)
+    var contentRect = content.getBoundingClientRect();
+    var shouldHide = contentRect.bottom < scrollOffset;
+    nav.classList.toggle('is-hidden', shouldHide);
+    mobileBtn.classList.toggle('is-hidden', shouldHide);
+
     // Mobile drawer links
     var drawerLinks = drawerList.querySelectorAll('.blog-toc-drawer-link');
     drawerLinks.forEach(function (l) {

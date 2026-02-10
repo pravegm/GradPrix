@@ -213,6 +213,13 @@
     <priority>0.8</priority>
   </url>
   
+  <url>
+    <loc>https://www.gradprix.com/blog/career-gaps-layoffs-pivots-mba.html</loc>
+    <lastmod>2026-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
   <!-- Blog Posts - Programme Selection -->
   <url>
     <loc>https://www.gradprix.com/blog/european-vs-usa-mba.html</loc>

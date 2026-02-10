@@ -245,6 +245,7 @@ GradPrix publishes expert content for MBA applicants:
 - Darden MBA Application Guide
 
 ### Strategy Articles
+- Career Gaps, Layoffs, and Pivots: How to Address Them Confidently in Your MBA Application
 - MBA Resume Teardown: What to Cut, What to Keep, What to Prove
 - Optional Essay Decision Tree: Should You Write One, and What to Say
 - Reapplicant Playbook: How to Show Growth (Without Apologizing)
@@ -314,6 +315,7 @@ More testimonials: https://www.gradprix.com/success-stories.html
 | Reapplicant Playbook: How to Show Growth | https://www.gradprix.com/blog/reapplicant-playbook-show-growth.html |
 | Optional Essay Decision Tree | https://www.gradprix.com/blog/optional-essay-decision-tree.html |
 | MBA Resume Teardown | https://www.gradprix.com/blog/mba-resume-teardown.html |
+| Career Gaps, Layoffs, and Pivots | https://www.gradprix.com/blog/career-gaps-layoffs-pivots-mba.html |
 
 ## Pricing Information
 

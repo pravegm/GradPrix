@@ -114,7 +114,7 @@ GradPrix/
 
 ## Blog Articles
 
-Twenty-one comprehensive, SEO + AI-optimized blog posts:
+Twenty-two comprehensive, SEO + AI-optimized blog posts:
 
 **School-Specific Guides:**
 1. **INSEAD MBA Application Guide** (Nov 2025) - Complete guide from INSEAD alumni
@@ -142,6 +142,7 @@ Twenty-one comprehensive, SEO + AI-optimized blog posts:
 19. **MBA for All Backgrounds** (Sep 2025) - Why diverse backgrounds are valued
 20. **MBA Resume Teardown** (Feb 2026) - What to cut, what to keep, what to prove
 21. **Career Gaps, Layoffs, and Pivots** (Jan 2026) - How to address them confidently in your MBA application
+22. **How to Pick MBA Recommenders Strategically** (Jan 2026) - Who to ask, how to brief them, and red flags to avoid
 
 Each blog includes:
 - Schema.org Article markup
